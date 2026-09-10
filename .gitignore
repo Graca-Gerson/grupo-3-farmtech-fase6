@@ -1,0 +1,15 @@
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Modelos treinados (podem ser grandes — considerar Git LFS se necessário)
+*.pt
+runs/
+
+# OS
+.DS_Store
