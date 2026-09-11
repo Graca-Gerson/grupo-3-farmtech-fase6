@@ -13,3 +13,7 @@ runs/
 
 # OS
 .DS_Store
+
+# Arquivos operacionais internos (nunca versionar — ver CLAUDE.md)
+CLAUDE.md
+NOTAS_AGENTE.md
