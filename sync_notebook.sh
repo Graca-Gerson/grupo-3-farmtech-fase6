@@ -5,9 +5,11 @@
 # Uso: bash sync_notebook.sh
 # ============================================================
 #
-# Escopo de sync definido na criação do notebook (12/09/2026):
-# README.md, CLAUDE.md, docs/protocolo_captura_fotos.md, docs/estrutura_drive.md,
-# docs/briefing_fase6.md, docs/Diagnostico_Fase6_VIKI_CORRIGIDO.md.
+# Escopo de sync definido na criação do notebook (12/09/2026), ampliado na consolidação
+# da documentação de gestão (12/09/2026): README.md, CLAUDE.md,
+# docs/protocolo_captura_fotos.md, docs/estrutura_drive.md, docs/briefing_fase6.md,
+# docs/Diagnostico_Fase6_VIKI_CORRIGIDO.md, docs/cronograma.md, docs/raci.md,
+# docs/matriz_riscos.md, docs/gut_matrix.md, docs/ishikawa.md, docs/macroprocesso.md.
 # Lista fixa, não scan dinâmico de docs/ — revisar manualmente se novos
 # documentos de processo relevantes forem criados (ex.: um novo docs/*.md).
 
@@ -85,6 +87,12 @@ sync_source "docs/protocolo_captura_fotos.md"                "docs/protocolo_cap
 sync_source "docs/estrutura_drive.md"                        "docs/estrutura_drive.md"
 sync_source "docs/briefing_fase6.md"                         "docs/briefing_fase6.md"
 sync_source "docs/Diagnostico_Fase6_VIKI_CORRIGIDO.md"       "docs/Diagnostico_Fase6_VIKI_CORRIGIDO.md"
+sync_source "docs/cronograma.md"                             "docs/cronograma.md"
+sync_source "docs/raci.md"                                   "docs/raci.md"
+sync_source "docs/matriz_riscos.md"                          "docs/matriz_riscos.md"
+sync_source "docs/gut_matrix.md"                             "docs/gut_matrix.md"
+sync_source "docs/ishikawa.md"                               "docs/ishikawa.md"
+sync_source "docs/macroprocesso.md"                          "docs/macroprocesso.md"
 
 # ── Resultado final ──────────────────────────────────────────────────────────
 echo ""

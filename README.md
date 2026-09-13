@@ -25,29 +25,29 @@
 | # | Objetivo | Status |
 |---|----------|--------|
 | 1 | Montar dataset customizado (80 imagens: 40 tomate + 40 pimentão) | 🔲 |
-| 2 | Rotular imagens de treino via Make Sense IA | 🔲 |
+| 2 | Rotular imagens de treino | 🔲 |
 | 3 | Treinar YOLO customizado com 2 configurações de épocas (30 e 60) | 🔲 |
 | 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | 🔲 |
 | 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔲 |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
-| 7 | *(Ir Além, opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔲 |
-| 8 | *(Ir Além, opcional)* Transfer Learning + segmentação de imagem | 🔲 |
+| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔲 |
+| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔲 |
 
 ---
 
 ## ✅ Status do Projeto
 
-> 🔄 **Em preparação** — estrutura do repositório, protocolo de captura de imagens e esqueleto do notebook já definidos. Coleta do dataset ainda não iniciada.
+> 🔄 **Em preparação** — estrutura do repositório, documentação de gestão e esqueleto do notebook já definidos. Coleta do dataset ainda não iniciada.
 
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
 | Repositório GitHub criado | ✅ | Público, `grupo-3-farmtech-fase6` |
-| Planejamento de sprint (Planner) | ✅ | 10 tarefas (F6-01 a F6-10), 14 riscos mapeados |
+| Planejamento e cronograma | ✅ | 10 tarefas (F6-01 a F6-10), 14 riscos mapeados |
 | Protocolo de captura de imagens definido | ✅ | Ver [`docs/protocolo_captura_fotos.md`](./docs/protocolo_captura_fotos.md) |
 | Estrutura do Google Drive planejada | ✅ | Ver [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
 | Esqueleto do notebook (Entrega 1) | ✅ | Estrutura pronta, aguardando dataset para execução |
 | Coleta das 80 imagens | 🔲 | Próxima etapa |
-| Rotulação (Make Sense IA) | 🔲 | Depende da coleta |
+| Rotulação | 🔲 | Depende da coleta |
 | Treino YOLO (Entrega 1) | 🔲 | Depende da rotulação |
 | Comparação de abordagens (Entrega 2) | 🔲 | Depende da Entrega 1 |
 | README final + vídeo | 🔲 | Última etapa antes da entrega |
@@ -62,8 +62,17 @@ grupo-3-farmtech-fase6/
 ├── docs/
 │   ├── protocolo_captura_fotos.md    ← Regras de captura das imagens do dataset
 │   ├── estrutura_drive.md            ← Organização de pastas no Google Drive
-│   ├── briefing_fase6.md             ← Briefing completo do enunciado + contexto
-│   └── Diagnostico_Fase6_VIKI_CORRIGIDO.md  ← Diagnóstico de riscos da sprint
+│   ├── macroprocesso.md              ← Fluxo de gestão do projeto (planejamento → entrega)
+│   ├── macroprocesso_fase6.png
+│   ├── cronograma.md                 ← Cronograma detalhado + jornada visual
+│   ├── cronograma_fase6.png
+│   ├── raci.md                       ← Responsabilidades da equipe
+│   ├── raci_fase6.png
+│   ├── matriz_riscos.md              ← Riscos identificados (Impacto × Probabilidade)
+│   ├── gut_matrix.md                 ← Priorização dos riscos (GUT)
+│   ├── gut_fase6.png
+│   ├── ishikawa.md                   ← Causas raiz (diagrama de Ishikawa)
+│   └── ishikawa_fase6.png
 ├── requirements.txt
 └── README.md
 ```
@@ -89,9 +98,9 @@ Captura de imagens (celular, 80 fotos: 40 tomate + 40 pimentão)
               ↓
     Google Drive (dataset_bruto/ → dataset_dividido/)
               ↓
-   Make Sense IA         ← rotulação manual (bounding boxes)
+   Rotulação manual   ← anotação das bounding boxes
               ↓
-   Google Colab           ← treino YOLO customizado
+   Google Colab        ← treino YOLO customizado
               ↓
   2 simulações (30 e 60 épocas) → comparação de métricas
               ↓
@@ -110,7 +119,7 @@ Sobre a mesma base de dados (tomate × pimentão), três abordagens são compara
 
 Critérios de comparação: facilidade de uso/integração, precisão, tempo de treinamento, tempo de inferência.
 
-### Ir Além (opcional, não vale nota — soma pontos entre Fases 5, 6 e 7)
+### Escopo Opcional (não vale nota — soma pontos entre Fases 5, 6 e 7)
 
 - **Opção 1:** ESP32-CAM (ou webcam) reconhecendo tomate/pimentão em tempo real, usando o modelo `best.pt` da Entrega 1
 - **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação
@@ -151,7 +160,12 @@ O dataset (80 imagens + rotulações) não está neste repositório — fica no 
 | 📓 Notebook Principal | [GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
 | 📸 Protocolo de Captura de Imagens | [docs/protocolo_captura_fotos.md](./docs/protocolo_captura_fotos.md) |
 | 📁 Estrutura do Google Drive | [docs/estrutura_drive.md](./docs/estrutura_drive.md) |
-| 📋 Briefing Completo | [docs/briefing_fase6.md](./docs/briefing_fase6.md) |
+| 🔄 Fluxo do Macroprocesso | [docs/macroprocesso.md](./docs/macroprocesso.md) |
+| 📅 Cronograma | [docs/cronograma.md](./docs/cronograma.md) |
+| 👥 Matriz RACI | [docs/raci.md](./docs/raci.md) |
+| ⚠️ Matriz de Riscos | [docs/matriz_riscos.md](./docs/matriz_riscos.md) |
+| 🎯 Matriz GUT | [docs/gut_matrix.md](./docs/gut_matrix.md) |
+| 🐟 Diagrama de Ishikawa | [docs/ishikawa.md](./docs/ishikawa.md) |
 
 ---
 
