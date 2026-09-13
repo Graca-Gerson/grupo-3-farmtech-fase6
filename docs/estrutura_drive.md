@@ -1,5 +1,7 @@
 # Estrutura de Pastas — Google Drive (Fase 6)
 
+![Estrutura do Google Drive](./estrutura_drive_fase6.png)
+
 ## Passo a passo para criar
 
 Crie essa estrutura de pastas no seu Google Drive (pessoal ou do grupo — compartilhe com Carlos e Ryann como Editor):

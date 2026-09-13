@@ -1,5 +1,7 @@
 # Protocolo de Captura — Dataset Tomate x Pimentão (Fase 6)
 
+![Protocolo de Captura](./protocolo_captura_fase6.png)
+
 ## Objetivo
 80 imagens totais: 40 de tomate + 40 de pimentão, com variedade suficiente para o modelo generalizar bem (não decorar um único cenário).
 
