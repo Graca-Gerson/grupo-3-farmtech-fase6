@@ -73,7 +73,7 @@ grupo-3-farmtech-fase6/
 │   ├── gut_fase6.png
 │   ├── ishikawa.md                   ← Causas raiz (diagrama de Ishikawa)
 │   └── ishikawa_fase6.png
-├── requirements.txt
+├── requirements.txt                  ← Dependências para execução local (macOS e Windows)
 └── README.md
 ```
 
@@ -133,7 +133,7 @@ Critérios de comparação: facilidade de uso/integração, precisão, tempo de 
 | Ferramenta | Observação |
 |:-----------|:-----------|
 | Conta Google | Para Google Drive e Google Colab |
-| Navegador | Não é necessário instalar nada localmente — o treino roda no Colab |
+| Navegador | Não é necessário instalar nada localmente — o treino roda no Colab (execução local é opcional, ver seção 4) |
 
 ### 2. Acessar o notebook
 
@@ -148,6 +148,65 @@ O notebook principal está na raiz deste repositório:
 ### 3. Dataset
 
 O dataset (80 imagens + rotulações) não está neste repositório — fica no Google Drive, conforme o protocolo em [`docs/protocolo_captura_fotos.md`](./docs/protocolo_captura_fotos.md) e a estrutura em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
+
+### 4. Execução local (opcional — alternativa ao Colab)
+
+> No **Google Colab não é preciso instalar nada**: a primeira célula de código do notebook instala o `ultralytics`, e o Colab já traz PyTorch e TensorFlow com GPU. **Não rode `pip install -r requirements.txt` no Colab** — isso substituiria o PyTorch com GPU do Colab.
+
+Para rodar na própria máquina, use **Python 3.12 ou 3.13** (confira com `python --version`; no Mac pode ser `python3 --version`). Com Python 3.11 ou anterior a instalação falha.
+
+**Passo 1 — Baixar o projeto e criar um ambiente virtual** (evita conflito com bibliotecas de outros projetos):
+
+```bash
+git clone https://github.com/Graca-Gerson/grupo-3-farmtech-fase6.git
+cd grupo-3-farmtech-fase6
+python -m venv .venv
+```
+
+Ative o ambiente — o comando muda conforme o sistema:
+
+| Sistema | Comando para ativar |
+|:--------|:--------------------|
+| macOS / Linux | `source .venv/bin/activate` |
+| Windows (PowerShell) | `.venv\Scripts\Activate.ps1` |
+| Windows (Prompt de Comando) | `.venv\Scripts\activate.bat` |
+
+**Passo 2 — Instalar as dependências** (conforme o sistema):
+
+**🍎 macOS** — um único comando:
+
+```bash
+pip install -r requirements.txt
+```
+
+O PyTorch instalado já usa a GPU da Apple (MPS) automaticamente nos Macs com chip M1/M2/M3/M4.
+
+**🪟 Windows sem placa de vídeo NVIDIA** — o mesmo comando único (treino roda em CPU, mais lento):
+
+```bash
+pip install -r requirements.txt
+```
+
+**🪟 Windows com placa de vídeo NVIDIA** — instale primeiro o PyTorch com suporte a GPU (CUDA), **depois** o restante:
+
+```bash
+pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cu126
+pip install -r requirements.txt
+```
+
+A ordem importa: se o `requirements.txt` for instalado primeiro, o Windows fica com o PyTorch só de CPU. Para confirmar que a GPU foi reconhecida, rode `python -c "import torch; print(torch.cuda.is_available())"` — o esperado é `True`. Se aparecer `False`, atualize o driver da NVIDIA e rode de novo o primeiro comando acrescentando `--force-reinstall` no final (sem essa opção o pip mantém a versão de CPU já instalada).
+
+> 💡 **TensorFlow no Windows** (usado na CNN da Entrega 2) roda só em CPU — o TensorFlow não oferece GPU nativa no Windows. Funciona normalmente, apenas mais devagar; para treinar com GPU, prefira o Colab.
+
+**Resultado esperado da instalação:** nenhuma linha com `ERROR`. Pode levar vários minutos (PyTorch e TensorFlow são grandes, cerca de 1–2 GB no total).
+
+**Passo 3 — Abrir o notebook:**
+
+```bash
+jupyter notebook GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb
+```
+
+> ⚠️ A primeira célula do notebook monta o Google Drive (`google.colab`), que só existe no Colab. Na execução local, pule essa célula e ajuste a variável `BASE_PATH` para a pasta onde está o dataset na sua máquina.
 
 ---
 

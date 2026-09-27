@@ -1,0 +1,35 @@
+# FarmTech Vision — Dependências Python
+# FIAP — IA, Fase 6 | Grupo 3
+#
+# Instalar: pip install -r requirements.txt
+# Python 3.12 ou 3.13 (numpy 2.5 não tem versão para 3.11 ou anterior)
+# Conferido em 27/09/2026: macOS (Apple Silicon) e Windows 64 bits
+#
+# ⚠️ Só para execução LOCAL. No Google Colab NÃO use este arquivo — o Colab já traz
+#    torch/tensorflow com GPU; o notebook instala apenas o ultralytics na 1ª célula.
+# ⚠️ Windows com placa NVIDIA: instale o torch com CUDA ANTES deste arquivo
+#    (passo a passo no README, seção "Como Executar → Execução local").
+
+# Detecção de objetos — Entrega 1 (YOLO customizado) e Entrega 2 (YOLO tradicional)
+ultralytics==8.4.164
+
+# PyTorch — motor do YOLO
+# macOS: esta versão já usa a GPU da Apple (MPS) automaticamente
+# Windows: a versão do PyPI é só CPU; para GPU NVIDIA, ver README
+torch==2.14.0
+torchvision==0.29.0
+
+# TensorFlow/Keras — CNN do zero (Entrega 2) e Transfer Learning (escopo opcional 2)
+# Windows: roda só em CPU (TensorFlow não suporta GPU nativa no Windows desde a 2.11)
+tensorflow==2.21.0
+
+# Visão computacional e dados
+opencv-python==5.0.0.93   # leitura de imagens e captura por webcam (escopo opcional 1)
+numpy==2.5.3              # exige Python >= 3.12
+pandas==3.0.6
+scikit-learn==1.9.1       # matriz de confusão e métricas na comparação da Entrega 2
+matplotlib==3.11.2
+
+# Notebooks
+jupyter==1.1.1
+ipykernel==7.3.0
