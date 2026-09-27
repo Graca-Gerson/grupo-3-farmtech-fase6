@@ -73,6 +73,8 @@ grupo-3-farmtech-fase6/
 │   ├── gut_fase6.png
 │   ├── ishikawa.md                   ← Causas raiz (diagrama de Ishikawa)
 │   └── ishikawa_fase6.png
+├── scripts/
+│   └── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
 ├── requirements.txt                  ← Dependências para execução local (macOS e Windows)
 └── README.md
 ```
@@ -96,7 +98,7 @@ Este projeto usa **YOLO** (You Only Look Once) para detectar e diferenciar dois 
 ```
 Captura de imagens (celular, 80 fotos: 40 tomate + 40 pimentão)
               ↓
-    Google Drive (dataset_bruto/ → dataset_dividido/)
+    Google Drive (Dataset_bruto/ → Dataset_dividido/ → images/ + labels/)
               ↓
    Rotulação manual   ← anotação das bounding boxes
               ↓

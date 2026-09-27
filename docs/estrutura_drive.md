@@ -2,48 +2,91 @@
 
 ![Estrutura do Google Drive](./estrutura_drive_fase6.png)
 
-## Passo a passo para criar
+> ⚠️ **Os nomes abaixo são os nomes reais das pastas no Drive, com maiúsculas e minúsculas exatas.** O Google Colab diferencia maiúsculas de minúsculas: `Dataset_dividido` e `dataset_dividido` são pastas diferentes para ele. O notebook usa exatamente estes nomes.
 
-Crie essa estrutura de pastas no seu Google Drive (pessoal ou do grupo — compartilhe com Carlos e Ryann como Editor):
+## Onde fica a pasta e como acessá-la no Colab
+
+A pasta `FarmTech_Fase6` fica no **Meu Drive** do Gerson e é compartilhada com o grupo como Editor (não é um "Drive compartilhado"). No Colab, o caminho usado pelo notebook é:
+
+```
+/content/drive/MyDrive/FarmTech_Fase6
+```
+
+- **Para o dono da pasta:** funciona direto.
+- **Para os demais membros:** a pasta aparece em "Compartilhados comigo", que o Colab não enxerga em `MyDrive`. Faça uma única vez: no Google Drive, clique com o botão direito em `FarmTech_Fase6` → **Organizar** → **Adicionar atalho** → **Meu Drive**. Com o atalho na raiz do Meu Drive, o mesmo caminho acima passa a funcionar.
+
+## Estrutura
 
 ```
 FarmTech_Fase6/
-├── dataset_bruto/
-│   ├── tomate/          ← as 40 fotos de tomate, antes de qualquer divisão
-│   └── pimentao/        ← as 40 fotos de pimentão, antes de qualquer divisão
+├── Dataset_bruto/
+│   ├── Tomate/          ← as 40 fotos de tomate, antes de qualquer divisão
+│   └── Pimentao/        ← as 40 fotos de pimentão, antes de qualquer divisão
 │
-├── dataset_dividido/
-│   ├── tomate/
-│   │   ├── treino/      ← 32 imagens
-│   │   ├── validacao/   ← 4 imagens
-│   │   └── teste/       ← 4 imagens
-│   └── pimentao/
-│       ├── treino/      ← 32 imagens
-│       ├── validacao/   ← 4 imagens
-│       └── teste/       ← 4 imagens
+├── Dataset_dividido/
+│   ├── Tomate/
+│   │   ├── Treino/      ← 32 imagens
+│   │   ├── Validacao/   ← 4 imagens
+│   │   └── Teste/       ← 4 imagens
+│   ├── Pimentao/
+│   │   ├── Treino/      ← 32 imagens
+│   │   ├── Validacao/   ← 4 imagens
+│   │   └── Teste/       ← 4 imagens
+│   │
+│   │   (pastas abaixo GERADAS pelo script — ver seção "Formato do YOLO")
+│   ├── treino/
+│   │   ├── images/      ← 64 imagens (32 tomate + 32 pimentão)
+│   │   └── labels/      ← 64 rótulos .txt
+│   ├── validacao/
+│   │   ├── images/      ← 8 imagens
+│   │   └── labels/
+│   └── teste/
+│       ├── images/      ← 8 imagens
+│       └── labels/
 │
-├── rotulacoes/
-│   └── (aqui entram os arquivos gerados pelo Make Sense IA — 
-│        exporta como YOLO format, um .txt por imagem)
+├── Rotulacoes/
+│   └── (arquivos exportados do Make Sense IA em formato YOLO —
+│        um .txt por imagem, com o mesmo nome: "Tomate 16.jpg" → "Tomate 16.txt")
 │
-└── resultados/
-    ├── epocas_30/       ← outputs do treino com 30 épocas
-    └── epocas_60/       ← outputs do treino com 60 épocas
+├── Resultados/
+│   ├── epocas_30/       ← outputs do treino com 30 épocas (criada pelo treino)
+│   └── epocas_60/       ← outputs do treino com 60 épocas (criada pelo treino)
+│
+└── data.yaml            ← criado pelo notebook (seção 2.3)
 ```
+
+Nome das fotos: `Tomate 01.jpg` … `Tomate 40.jpg` e `Pimentao 01.jpg` … `Pimentao 40.jpg`.
 
 ## Por que essa estrutura
 
-- **`dataset_bruto/`** — mantém as fotos originais intactas, caso precise refazer a divisão treino/val/teste depois
-- **`dataset_dividido/`** — já no formato exato que o YOLO espera (pastas separadas por split)
-- **`rotulacoes/`** — centraliza os arquivos de anotação, separados das imagens (facilita conferir se todas as imagens têm rótulo correspondente)
-- **`resultados/`** — separa as duas simulações de época (30 vs 60) pedidas no enunciado, facilitando comparar depois
+- **`Dataset_bruto/`** — mantém as fotos originais intactas, caso precise refazer a divisão treino/val/teste depois
+- **`Dataset_dividido/<Classe>/<Split>/`** — divisão 32/4/4 feita por classe, fácil de conferir visualmente
+- **`Rotulacoes/`** — centraliza os arquivos de anotação exportados, separados das imagens (facilita conferir se todas as imagens têm rótulo correspondente)
+- **`Resultados/`** — separa as duas simulações de época (30 vs 60) pedidas no enunciado, facilitando comparar depois
+
+## Formato do YOLO (images/labels)
+
+O YOLO não lê a divisão por classe nem a pasta `Rotulacoes/` diretamente. Ele exige, para cada split, duas pastas irmãs — `images/` e `labels/` — com as duas classes juntas e cada imagem acompanhada de um `.txt` de mesmo nome. Quem diferencia tomate de pimentão é o **índice de classe** na primeira coluna de cada `.txt`: `0` = tomate, `1` = pimentão (mesma ordem de `names` no `data.yaml`).
+
+Essa estrutura é gerada pelo script [`scripts/organizar_dataset_yolo.py`](../scripts/organizar_dataset_yolo.py), executado pela célula 2.1 do notebook. O script:
+
+- **copia** as imagens e os rótulos — nunca move nem apaga os originais;
+- normaliza os nomes no destino (`Tomate 16.jpg` → `tomate_16.jpg`);
+- grava o índice de classe a partir do nome do arquivo. Na exportação original, o índice dentro dos `.txt` não corresponde ao objeto (há rótulos de tomate com `1` e de pimentão com `0`); as coordenadas das caixas são mantidas como foram desenhadas;
+- aponta rótulo faltando, linha inválida ou imagem repetida entre splits, e termina com erro nesses casos.
+
+Pode ser executado de novo sempre que as fotos ou os rótulos mudarem. Para simular sem copiar nada:
+
+```bash
+python scripts/organizar_dataset_yolo.py --base /content/drive/MyDrive/FarmTech_Fase6 --dry-run
+```
 
 ## Como dividir 40 em 32/4/4
 
-Depois de ter as 40 fotos de cada classe na pasta `dataset_bruto/`, a divisão pode ser:
+Depois de ter as 40 fotos de cada classe em `Dataset_bruto/<Classe>/`, a divisão pode ser:
 - Ordenar as fotos (ex: por nome de arquivo)
-- Pegar as primeiras 32 → `treino/`
-- Próximas 4 → `validacao/`
-- Últimas 4 → `teste/`
+- Pegar as primeiras 32 → `Treino/`
+- Próximas 4 → `Validacao/`
+- Últimas 4 → `Teste/`
 
-Ou, melhor ainda (evita viés de ordem): embaralhar aleatoriamente antes de dividir. Isso pode ser feito com poucas linhas de código Python dentro do próprio Colab (usando `random.shuffle`), então não precisa fazer manualmente — dá pra automatizar essa etapa dentro do notebook.
+Ou, melhor ainda (evita viés de ordem): embaralhar aleatoriamente antes de dividir. A divisão atual do dataset foi feita dessa forma — por exemplo, as imagens de teste do tomate são as de número 17, 23, 29 e 37.
