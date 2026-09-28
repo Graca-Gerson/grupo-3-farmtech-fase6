@@ -49,8 +49,10 @@ FarmTech_Fase6/
 │        um .txt por imagem, com o mesmo nome: "Tomate 16.jpg" → "Tomate 16.txt")
 │
 ├── Resultados/
-│   ├── epocas_30/       ← outputs do treino com 30 épocas (criada pelo treino)
-│   └── epocas_60/       ← outputs do treino com 60 épocas (criada pelo treino)
+│   ├── epocas_30_<executor>/   ← treino com 30 épocas de cada integrante (criada pelo treino)
+│   │   └── treino/weights/best.pt
+│   └── epocas_60_<executor>/   ← treino com 60 épocas de cada integrante (criada pelo treino)
+│       └── treino/weights/best.pt
 │
 └── data.yaml            ← criado pelo notebook (seção 2.3)
 ```
@@ -62,7 +64,7 @@ Nome das fotos: `Tomate 01.jpg` … `Tomate 40.jpg` e `Pimentao 01.jpg` … `Pim
 - **`Dataset_bruto/`** — mantém as fotos originais intactas, caso precise refazer a divisão treino/val/teste depois
 - **`Dataset_dividido/<Classe>/<Split>/`** — divisão 32/4/4 feita por classe, fácil de conferir visualmente
 - **`Rotulacoes/`** — centraliza os arquivos de anotação exportados, separados das imagens (facilita conferir se todas as imagens têm rótulo correspondente)
-- **`Resultados/`** — separa as duas simulações de época (30 vs 60) pedidas no enunciado, facilitando comparar depois
+- **`Resultados/`** — separa as duas simulações de época (30 vs 60) pedidas no enunciado e, dentro delas, quem executou o treino, facilitando comparar depois
 
 ## Formato do YOLO (images/labels)
 
@@ -80,6 +82,27 @@ Pode ser executado de novo sempre que as fotos ou os rótulos mudarem. Para simu
 ```bash
 python scripts/organizar_dataset_yolo.py --base /content/drive/MyDrive/FarmTech_Fase6 --dry-run
 ```
+
+## Resultados por integrante (`EXECUTOR`)
+
+Os quatro integrantes rodam o mesmo notebook apontando para a mesma pasta do Drive. Para não misturar resultados, a célula 1 define:
+
+```python
+EXECUTOR = 'gerson'  # cada integrante troca para o próprio primeiro nome antes de rodar
+```
+
+- **Antes de rodar, troque `EXECUTOR` pelo seu primeiro nome** (minúsculo, sem acento). Se ficar o valor padrão, o seu treino é gravado como se fosse de outra pessoa.
+- Cada treino grava em uma pasta própria: `Resultados/epocas_30_<executor>/treino/` e `Resultados/epocas_60_<executor>/treino/`. Assim, os resultados de cada pessoa ficam isolados e é possível saber de quem é cada modelo.
+- Se a mesma pessoa treinar de novo com o mesmo número de épocas, o Ultralytics não sobrescreve: cria `treino2/`, `treino3/`… dentro da pasta dela. Use sempre a mais recente.
+
+**Recarregar um modelo já treinado (sem treinar de novo).** Se o ambiente do Colab desconectar depois do treino, os pesos continuam salvos no Drive. Basta rodar a célula 1 (montar o Drive e definir `BASE_PATH`/`EXECUTOR`), instalar o Ultralytics e carregar o `best.pt`:
+
+```python
+from ultralytics import YOLO
+melhor_modelo = YOLO(f'{BASE_PATH}/Resultados/epocas_60_{EXECUTOR}/treino/weights/best.pt')
+```
+
+Com o modelo carregado, dá para seguir direto para a validação (`melhor_modelo.val(data=f'{BASE_PATH}/data.yaml')`) ou para o teste da seção 7.
 
 ## Como dividir 40 em 32/4/4
 
