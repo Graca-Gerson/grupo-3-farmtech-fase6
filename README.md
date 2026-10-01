@@ -27,7 +27,7 @@
 | 1 | Montar dataset customizado (80 imagens: 40 tomate + 40 pimentão) | ✅ |
 | 2 | Rotular imagens de treino | ✅ |
 | 3 | Treinar YOLO customizado com 2 configurações de épocas (30 e 60) | ✅ |
-| 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | 🔲 |
+| 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | 🔄 Notebook da Entrega 2 pronto, execução no Colab pendente |
 | 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entrega 1 documentada no notebook |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
 | 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔲 |
@@ -37,12 +37,12 @@
 
 ## ✅ Status do Projeto
 
-> 🔄 **Entrega 1 concluída no notebook** — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Próximas etapas: vídeo da Entrega 1 e Entrega 2.
+> 🔄 **Entrega 1 concluída no notebook** — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Entrega 2: [notebook de comparação](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) pronto, aguardando a execução oficial no Colab.
 
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
 | Repositório GitHub criado | ✅ | Público, `grupo-3-farmtech-fase6` |
-| Planejamento e cronograma | ✅ | 10 tarefas (F6-01 a F6-10), 14 riscos mapeados |
+| Planejamento e cronograma | ✅ | 14 tarefas (F6-01 a F6-14), 14 riscos mapeados |
 | Protocolo de captura de imagens definido | ✅ | Ver [`docs/protocolo_captura_fotos.md`](./docs/protocolo_captura_fotos.md) |
 | Estrutura do Google Drive organizada | ✅ | Ver [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
 | Coleta das 80 imagens | ✅ | 40 tomate + 40 pimentão, divididas em 32/4/4 (treino/validação/teste) por classe |
@@ -51,7 +51,7 @@
 | Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
 | Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
 | Vídeo da Entrega 1 | 🔲 | Próxima etapa |
-| Comparação de abordagens (Entrega 2) | 🔲 | Próxima etapa |
+| Comparação de abordagens (Entrega 2) | 🔄 | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) pronto (YOLO customizada × YOLO tradicional × CNN do zero); falta a execução oficial no Colab e a análise final (seção 8) |
 | README final + vídeo | 🔲 | Última etapa antes da entrega |
 
 ---
@@ -60,7 +60,8 @@
 
 ```
 grupo-3-farmtech-fase6/
-├── GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb   ← Notebook principal (Entrega 1)
+├── GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb            ← Notebook principal (Entrega 1)
+├── GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb   ← Notebook da Entrega 2 (comparação de abordagens)
 ├── docs/
 │   ├── protocolo_captura_fotos.md    ← Regras de captura das imagens do dataset
 │   ├── estrutura_drive.md            ← Organização de pastas no Google Drive
@@ -124,11 +125,13 @@ Sobre a mesma base de dados (tomate × pimentão), três abordagens são compara
 
 | Abordagem | Descrição |
 |:----------|:----------|
-| YOLO customizado | Modelo da Entrega 1, fine-tuned no dataset próprio |
-| YOLO tradicional | Modelo padrão, sem customização |
-| CNN treinada do zero | Rede convolucional construída e treinada especificamente para este dataset |
+| YOLO customizado | Modelo da Entrega 1 (`best.pt`), fine-tuned no dataset próprio |
+| YOLO tradicional | YOLOv8n padrão, com os pesos genéricos do COCO, usado sem nenhum treino no dataset |
+| CNN treinada do zero | Rede convolucional com arquitetura própria, treinada para classificar a imagem inteira |
 
-Critérios de comparação: facilidade de uso/integração, precisão, tempo de treinamento, tempo de inferência.
+Critérios de comparação: facilidade de uso/integração, precisão, tempo de treinamento, tempo de inferência — todos medidos nas mesmas 8 imagens de teste da Entrega 1.
+
+Notebook: [`GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb`](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb)
 
 ### Escopo Opcional (não vale nota — soma pontos entre Fases 5, 6 e 7)
 
@@ -148,8 +151,11 @@ Critérios de comparação: facilidade de uso/integração, precisão, tempo de 
 
 ### 2. Acessar o notebook
 
-O notebook principal está na raiz deste repositório:
-[`GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb`](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb)
+Os notebooks estão na raiz deste repositório:
+- Entrega 1: [`GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb`](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb)
+- Entrega 2: [`GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb`](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb)
+
+Os passos abaixo valem para os dois.
 
 1. **Crie o atalho da pasta do projeto no seu Drive (uma única vez).** A pasta `FarmTech_Fase6` fica no Google Drive de um integrante e é compartilhada com o grupo. No Google Drive, abra **Compartilhados comigo**, clique com o botão direito em `FarmTech_Fase6` → **Organizar** → **Adicionar atalho** → **Meu Drive**. Sem o atalho, o notebook não encontra o dataset e o treino não consegue salvar os resultados. A estrutura da pasta está em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
 2. **Abra o notebook direto do GitHub no Colab.** No [Google Colab](https://colab.research.google.com), use **Arquivo → Abrir notebook → GitHub**, informe `Graca-Gerson/grupo-3-farmtech-fase6` e escolha o notebook. Não use cópias antigas salvas no Drive.
@@ -159,6 +165,8 @@ O notebook principal está na raiz deste repositório:
 6. **Não salve o notebook de volta no GitHub.** A versão do repositório guarda os resultados oficiais documentados. Se o Colab oferecer salvar no GitHub ou perguntar sobre alterações ao fechar, descarte.
 
 > Como o treino usa semente fixa (`seed=0`, `deterministic=True`), uma nova execução com GPU T4 deve reproduzir as mesmas métricas registradas no notebook.
+
+> **Entrega 2:** o notebook usa o modelo treinado na Entrega 1 (não treina o YOLO de novo) e a estrutura do dataset gerada pela seção 2.1 do notebook da Entrega 1 — os dois já existem no Drive. Os resultados (modelo da CNN, tabelas e imagens) são gravados em `Resultados/entrega2_<seu nome>/`. A CNN também usa semente fixa, mas na GPU pode variar ligeiramente entre execuções.
 
 ### 3. Dataset
 
@@ -230,8 +238,9 @@ jupyter notebook GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb
 | Recurso | Link |
 |:--------|:-----|
 | 🌐 **Repositório GitHub** | [Graca-Gerson/grupo-3-farmtech-fase6](https://github.com/Graca-Gerson/grupo-3-farmtech-fase6) — Público |
-| 🎬 **Vídeo Demonstrativo** | *(a publicar após a Entrega 1 e 2 estarem concluídas)* |
-| 📓 Notebook Principal | [GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
+| 🎬 **Vídeo Demonstrativo** | *(Entrega 1 — a publicar)* |
+| 📓 Notebook Principal (Entrega 1) | [GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
+| 📓 Notebook da Entrega 2 | [GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) |
 | 📸 Protocolo de Captura de Imagens | [docs/protocolo_captura_fotos.md](./docs/protocolo_captura_fotos.md) |
 | 📁 Estrutura do Google Drive | [docs/estrutura_drive.md](./docs/estrutura_drive.md) |
 | 🔄 Fluxo do Macroprocesso | [docs/macroprocesso.md](./docs/macroprocesso.md) |
