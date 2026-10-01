@@ -154,7 +154,7 @@ O notebook principal está na raiz deste repositório:
 1. **Crie o atalho da pasta do projeto no seu Drive (uma única vez).** A pasta `FarmTech_Fase6` fica no Google Drive de um integrante e é compartilhada com o grupo. No Google Drive, abra **Compartilhados comigo**, clique com o botão direito em `FarmTech_Fase6` → **Organizar** → **Adicionar atalho** → **Meu Drive**. Sem o atalho, o notebook não encontra o dataset e o treino não consegue salvar os resultados. A estrutura da pasta está em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
 2. **Abra o notebook direto do GitHub no Colab.** No [Google Colab](https://colab.research.google.com), use **Arquivo → Abrir notebook → GitHub**, informe `Graca-Gerson/grupo-3-farmtech-fase6` e escolha o notebook. Não use cópias antigas salvas no Drive.
 3. **Ative a GPU.** Em **Ambiente de execução → Alterar tipo de ambiente de execução**, selecione **GPU T4**. A segunda célula de código confirma se a GPU foi reconhecida (o treino na CPU é muito mais lento).
-4. **Troque o executor antes de rodar.** Na primeira célula de código, altere `EXECUTOR = 'gerson'` para o seu primeiro nome (minúsculo, sem acento). Os resultados do treino são gravados em `Resultados/epocas_30_<seu nome>/` e `Resultados/epocas_60_<seu nome>/`, sem misturar com os resultados de outros integrantes.
+4. **Troque o executor antes de rodar.** Na primeira célula de código, altere `EXECUTOR = 'gerson'` para o seu primeiro nome (minúsculo, sem acento). Os resultados do treino são gravados em `Resultados/epocas_30_<seu nome>/` e `Resultados/epocas_60_<seu nome>/`, e as imagens do teste com as detecções em `Resultados/predict_<seu nome>/teste/`, sem misturar com os resultados de outros integrantes.
 5. **Execute as células em ordem.** A primeira monta o Google Drive (o Colab pede autorização de acesso).
 6. **Não salve o notebook de volta no GitHub.** A versão do repositório guarda os resultados oficiais documentados. Se o Colab oferecer salvar no GitHub ou perguntar sobre alterações ao fechar, descarte.
 
@@ -166,7 +166,7 @@ O dataset (80 imagens + rotulações) não está neste repositório — fica no 
 
 ### 4. Execução local (opcional — alternativa ao Colab)
 
-> No **Google Colab não é preciso instalar nada**: a primeira célula de código do notebook instala o `ultralytics`, e o Colab já traz PyTorch e TensorFlow com GPU. **Não rode `pip install -r requirements.txt` no Colab** — isso substituiria o PyTorch com GPU do Colab.
+> No **Google Colab não é preciso instalar nada**: a terceira célula de código do notebook instala o `ultralytics`, e o Colab já traz PyTorch e TensorFlow com GPU. **Não rode `pip install -r requirements.txt` no Colab** — isso substituiria o PyTorch com GPU do Colab.
 
 Para rodar na própria máquina, use **Python 3.12 ou 3.13** (confira com `python --version`; no Mac pode ser `python3 --version`). Com Python 3.11 ou anterior a instalação falha.
 

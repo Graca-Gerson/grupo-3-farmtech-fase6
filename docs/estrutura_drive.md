@@ -51,8 +51,10 @@ FarmTech_Fase6/
 ├── Resultados/
 │   ├── epocas_30_<executor>/   ← treino com 30 épocas de cada integrante (criada pelo treino)
 │   │   └── treino/weights/best.pt
-│   └── epocas_60_<executor>/   ← treino com 60 épocas de cada integrante (criada pelo treino)
-│       └── treino/weights/best.pt
+│   ├── epocas_60_<executor>/   ← treino com 60 épocas de cada integrante (criada pelo treino)
+│   │   └── treino/weights/best.pt
+│   └── predict_<executor>/     ← imagens de teste com as detecções (criada pela seção 7)
+│       └── teste/
 │
 └── data.yaml            ← criado pelo notebook (seção 2.3)
 ```
@@ -92,8 +94,8 @@ EXECUTOR = 'gerson'  # cada integrante troca para o próprio primeiro nome antes
 ```
 
 - **Antes de rodar, troque `EXECUTOR` pelo seu primeiro nome** (minúsculo, sem acento). Se ficar o valor padrão, o seu treino é gravado como se fosse de outra pessoa.
-- Cada treino grava em uma pasta própria: `Resultados/epocas_30_<executor>/treino/` e `Resultados/epocas_60_<executor>/treino/`. Assim, os resultados de cada pessoa ficam isolados e é possível saber de quem é cada modelo.
-- Se a mesma pessoa treinar de novo com o mesmo número de épocas, o Ultralytics não sobrescreve: cria `treino2/`, `treino3/`… dentro da pasta dela. Use sempre a mais recente.
+- Cada treino grava em uma pasta própria: `Resultados/epocas_30_<executor>/treino/` e `Resultados/epocas_60_<executor>/treino/`. O teste da seção 7 grava as imagens com as detecções em `Resultados/predict_<executor>/teste/` (reexecutar sobrescreve a mesma pasta). Assim, os resultados de cada pessoa ficam isolados e é possível saber de quem é cada modelo.
+- Se a mesma pessoa treinar de novo com o mesmo número de épocas, o Ultralytics não sobrescreve: cria `treino-2/`, `treino-3/`… dentro da pasta dela. Use sempre a mais recente.
 
 **Recarregar um modelo já treinado (sem treinar de novo).** Se o ambiente do Colab desconectar depois do treino, os pesos continuam salvos no Drive. Basta rodar a célula 1 (montar o Drive e definir `BASE_PATH`/`EXECUTOR`), instalar o Ultralytics e carregar o `best.pt`:
 
