@@ -73,6 +73,9 @@ grupo-3-farmtech-fase6/
 │   ├── gut_fase6.png
 │   ├── ishikawa.md                   ← Causas raiz (diagrama de Ishikawa)
 │   └── ishikawa_fase6.png
+├── prints_teste/                     ← Prints do teste do modelo (imagens nunca vistas)
+│   ├── tomate_23_acerto.jpg          ← Tomate detectado corretamente (confiança 0,91)
+│   └── pimentao_23_erro.jpg          ← Erro: pimentão classificado como tomate
 ├── scripts/
 │   └── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
 ├── requirements.txt                  ← Dependências para execução local (macOS e Windows)
@@ -108,6 +111,8 @@ Captura de imagens (celular, 80 fotos: 40 tomate + 40 pimentão)
               ↓
      Teste em imagens nunca vistas → prints dos resultados
 ```
+
+Prints do teste: [`prints_teste/`](./prints_teste/) (resultados completos na seção 7 do notebook).
 
 ### Entrega 2 — Comparação de Abordagens
 
