@@ -24,11 +24,11 @@
 
 | # | Objetivo | Status |
 |---|----------|--------|
-| 1 | Montar dataset customizado (80 imagens: 40 tomate + 40 pimentão) | 🔲 |
-| 2 | Rotular imagens de treino | 🔲 |
-| 3 | Treinar YOLO customizado com 2 configurações de épocas (30 e 60) | 🔲 |
+| 1 | Montar dataset customizado (80 imagens: 40 tomate + 40 pimentão) | ✅ |
+| 2 | Rotular imagens de treino | ✅ |
+| 3 | Treinar YOLO customizado com 2 configurações de épocas (30 e 60) | ✅ |
 | 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | 🔲 |
-| 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔲 |
+| 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entrega 1 documentada no notebook |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
 | 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔲 |
 | 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔲 |
@@ -37,19 +37,21 @@
 
 ## ✅ Status do Projeto
 
-> 🔄 **Em preparação** — estrutura do repositório, documentação de gestão e esqueleto do notebook já definidos. Coleta do dataset ainda não iniciada.
+> 🔄 **Entrega 1 concluída no notebook** — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Próximas etapas: vídeo da Entrega 1 e Entrega 2.
 
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
 | Repositório GitHub criado | ✅ | Público, `grupo-3-farmtech-fase6` |
 | Planejamento e cronograma | ✅ | 10 tarefas (F6-01 a F6-10), 14 riscos mapeados |
 | Protocolo de captura de imagens definido | ✅ | Ver [`docs/protocolo_captura_fotos.md`](./docs/protocolo_captura_fotos.md) |
-| Estrutura do Google Drive planejada | ✅ | Ver [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
-| Esqueleto do notebook (Entrega 1) | ✅ | Estrutura pronta, aguardando dataset para execução |
-| Coleta das 80 imagens | 🔲 | Próxima etapa |
-| Rotulação | 🔲 | Depende da coleta |
-| Treino YOLO (Entrega 1) | 🔲 | Depende da rotulação |
-| Comparação de abordagens (Entrega 2) | 🔲 | Depende da Entrega 1 |
+| Estrutura do Google Drive organizada | ✅ | Ver [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
+| Coleta das 80 imagens | ✅ | 40 tomate + 40 pimentão, divididas em 32/4/4 (treino/validação/teste) por classe |
+| Rotulação | ✅ | 80 rótulos em formato YOLO |
+| Treino YOLO (Entrega 1) | ✅ | 2 simulações: 30 e 60 épocas — melhor resultado com 60 épocas (mAP50 = 0,916 na validação); comparação nas seções 4 a 6 do [notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
+| Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
+| Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
+| Vídeo da Entrega 1 | 🔲 | Próxima etapa |
+| Comparação de abordagens (Entrega 2) | 🔲 | Próxima etapa |
 | README final + vídeo | 🔲 | Última etapa antes da entrega |
 
 ---
