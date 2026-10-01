@@ -116,6 +116,8 @@ Captura de imagens (celular, 80 fotos: 40 tomate + 40 pimentão)
 
 Prints do teste: [`prints_teste/`](./prints_teste/) (resultados completos na seção 7 do notebook).
 
+> **Prints parciais:** a pasta tem, por enquanto, 2 das 8 imagens de teste — um acerto (`tomate_23`) e o único erro do modelo (`pimentao_23`). As imagens processadas das outras 6 foram geradas no disco temporário do Colab e não foram guardadas; o conjunto completo das 8 será adicionado quando a predição for executada novamente, durante a gravação do vídeo da Entrega 1. O resultado das 8 imagens está registrado na tabela da seção 7.1 do notebook.
+
 ### Entrega 2 — Comparação de Abordagens
 
 Sobre a mesma base de dados (tomate × pimentão), três abordagens são comparadas:
@@ -149,10 +151,14 @@ Critérios de comparação: facilidade de uso/integração, precisão, tempo de 
 O notebook principal está na raiz deste repositório:
 [`GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb`](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb)
 
-1. Baixe o notebook (ou abra direto pelo GitHub → "Open in Colab", se disponível)
-2. Faça upload para o [Google Colab](https://colab.research.google.com)
-3. Garanta que o dataset esteja organizado no seu Google Drive, na estrutura descrita em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md)
-4. Execute as células em ordem — a primeira célula monta o Google Drive automaticamente
+1. **Crie o atalho da pasta do projeto no seu Drive (uma única vez).** A pasta `FarmTech_Fase6` fica no Google Drive de um integrante e é compartilhada com o grupo. No Google Drive, abra **Compartilhados comigo**, clique com o botão direito em `FarmTech_Fase6` → **Organizar** → **Adicionar atalho** → **Meu Drive**. Sem o atalho, o notebook não encontra o dataset e o treino não consegue salvar os resultados. A estrutura da pasta está em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
+2. **Abra o notebook direto do GitHub no Colab.** No [Google Colab](https://colab.research.google.com), use **Arquivo → Abrir notebook → GitHub**, informe `Graca-Gerson/grupo-3-farmtech-fase6` e escolha o notebook. Não use cópias antigas salvas no Drive.
+3. **Ative a GPU.** Em **Ambiente de execução → Alterar tipo de ambiente de execução**, selecione **GPU T4**. A segunda célula de código confirma se a GPU foi reconhecida (o treino na CPU é muito mais lento).
+4. **Troque o executor antes de rodar.** Na primeira célula de código, altere `EXECUTOR = 'gerson'` para o seu primeiro nome (minúsculo, sem acento). Os resultados do treino são gravados em `Resultados/epocas_30_<seu nome>/` e `Resultados/epocas_60_<seu nome>/`, sem misturar com os resultados de outros integrantes.
+5. **Execute as células em ordem.** A primeira monta o Google Drive (o Colab pede autorização de acesso).
+6. **Não salve o notebook de volta no GitHub.** A versão do repositório guarda os resultados oficiais documentados. Se o Colab oferecer salvar no GitHub ou perguntar sobre alterações ao fechar, descarte.
+
+> Como o treino usa semente fixa (`seed=0`, `deterministic=True`), uma nova execução com GPU T4 deve reproduzir as mesmas métricas registradas no notebook.
 
 ### 3. Dataset
 
