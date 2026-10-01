@@ -53,8 +53,13 @@ FarmTech_Fase6/
 │   │   └── treino/weights/best.pt
 │   ├── epocas_60_<executor>/   ← treino com 60 épocas de cada integrante (criada pelo treino)
 │   │   └── treino/weights/best.pt
-│   └── predict_<executor>/     ← imagens de teste com as detecções (criada pela seção 7)
-│       └── teste/
+│   ├── predict_<executor>/     ← imagens de teste com as detecções (criada pela seção 7)
+│   │   └── teste/
+│   └── entrega2_<executor>/    ← saídas do notebook da Entrega 2
+│       ├── cnn_do_zero.keras   ← CNN treinada (recarregar: keras.models.load_model)
+│       ├── comparacao.csv      ← tabela comparativa das 3 abordagens
+│       ├── val_teste_yolo_customizada/, predict_yolo_*/   ← métricas e imagens anotadas
+│       └── data.yaml           ← cópia usada para avaliar a YOLO no conjunto de teste
 │
 └── data.yaml            ← criado pelo notebook (seção 2.3)
 ```
@@ -95,6 +100,7 @@ EXECUTOR = 'gerson'  # cada integrante troca para o próprio primeiro nome antes
 
 - **Antes de rodar, troque `EXECUTOR` pelo seu primeiro nome** (minúsculo, sem acento). Se ficar o valor padrão, o seu treino é gravado como se fosse de outra pessoa.
 - Cada treino grava em uma pasta própria: `Resultados/epocas_30_<executor>/treino/` e `Resultados/epocas_60_<executor>/treino/`. O teste da seção 7 grava as imagens com as detecções em `Resultados/predict_<executor>/teste/` (reexecutar sobrescreve a mesma pasta). Assim, os resultados de cada pessoa ficam isolados e é possível saber de quem é cada modelo.
+- O notebook da Entrega 2 grava tudo em `Resultados/entrega2_<executor>/` (reexecutar sobrescreve). Ele não treina o YOLO de novo: compara sempre com o modelo oficial da Entrega 1 (`epocas_60_gerson/treino-2/weights/best.pt`) e lê as fotos direto de `Dataset_dividido/{Tomate,Pimentao}/…` e `Dataset_dividido/teste/` — nenhuma imagem é copiada.
 - Se a mesma pessoa treinar de novo com o mesmo número de épocas, o Ultralytics não sobrescreve: cria `treino-2/`, `treino-3/`… dentro da pasta dela. Use sempre a mais recente.
 
 **Recarregar um modelo já treinado (sem treinar de novo).** Se o ambiente do Colab desconectar depois do treino, os pesos continuam salvos no Drive. Basta rodar a célula 1 (montar o Drive e definir `BASE_PATH`/`EXECUTOR`), instalar o Ultralytics e carregar o `best.pt`:
