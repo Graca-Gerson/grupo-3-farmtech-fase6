@@ -9,20 +9,34 @@
 
 | ID | Risco | Impacto | Probabilidade | Prioridade | Mitigação | Responsável | Status |
 |:--:|-------|:-------:|:--------------:|:----------:|-----------|:------------:|:------:|
-| P0-1 | Commit após 13/10/2026 desclassifica a entrega | Crítico | Média | **P0** | Reservar 13/10 só para revisão/submissão; travar commits a partir de 12/10 | Gerson | 🔲 |
-| P0-2 | Ambiente de treino (GPU Colab) não validado antes do início | Crítico | Média | **P0** | Validar runtime GPU e cota na semana 1; plano B documentado | Gerson | 🔲 |
-| P0-3 | Dataset com menos de 80 imagens corretamente rotuladas | Crítico | Média | **P0** | Checklist de contagem mínima; validação cruzada por 2 membros | Carlos | 🔲 |
-| P1-1 | Atraso na coleta/organização das 80 imagens | Alto | Média | P1 | Iniciar coleta na semana 1, dividida entre os 3 membros | Carlos | 🔲 |
-| P1-2 | Equipe reduzida (3 efetivos) sobrecarregada | Alto | Média | P1 | Não alocar Lucas em caminho crítico; balancear tarefas | Gerson | 🔲 |
-| P1-3 | Notebook sem versionamento incremental (commits grandes) | Alto | Média | P1 | Commits pequenos por etapa, mensagens padronizadas | Gerson | 🔲 |
-| P1-4 | Falta de validação cruzada rigorosa treino/val/teste | Alto | Média | P1 | Split fixo 32/4/4 documentado, métricas nos 3 conjuntos | Gerson | 🔲 |
-| P1-5 | Dependência do Make Sense IA sem plano de contingência | Alto | Média | P1 | LabelImg/Roboflow como backup documentado | Carlos | 🔲 |
-| P2-1 | Complexidade do escopo opcional 2 sem tempo real disponível | Médio | Média | P2 | Só iniciar após checkpoint de 07/10 confirmar folga | Gerson | 🔲 |
-| P2-2 | Links quebrados no README (notebook/vídeo) | Médio | Média | P2 | Testar manualmente cada link antes da entrega final | Ryann | 🔲 |
-| P2-3 | Falta de padronização de nomenclatura (Drive/repo) | Médio | Média | P2 | Convenção de nomes definida já na semana 1 | Ryann | 🔲 |
-| P2-4 | Vídeo pode exceder o limite de 5 minutos | Médio | Média | P2 | Roteiro e duração-alvo definidos antes da gravação | Ryann | 🔲 |
-| P3-1 | Ausência de changelog de decisões técnicas | Baixo | Baixa | P3 | Manter `DECISIONS.md` com registro breve por marco | Gerson | 🔲 |
-| P3-2 | Ausência de testes de sanidade no notebook | Baixo | Baixa | P3 | Células de assert básicas antes de blocos de treino | Carlos | 🔲 |
+| P0-1 | Commit após 13/10/2026 desclassifica a entrega | Crítico | Média | **P0** | Reservar 13/10 só para revisão/submissão; travar commits a partir de 12/10 | Gerson | 🔲 Aberto |
+| P0-2 | Ambiente de treino (GPU Colab) não validado antes do início | Crítico | Média | **P0** | Validar runtime GPU e cota na semana 1; plano B documentado | Gerson | ✅ Fechado |
+| P0-3 | Dataset com menos de 80 imagens corretamente rotuladas | Crítico | Média | **P0** | Checklist de contagem mínima; validação cruzada por 2 membros | Carlos | ✅ Fechado |
+| P1-1 | Atraso na coleta/organização das 80 imagens | Alto | Média | P1 | Iniciar coleta na semana 1, dividida entre os 3 membros | Carlos | ✅ Fechado |
+| P1-2 | Equipe reduzida (3 efetivos) sobrecarregada | Alto | Média | P1 | Não alocar Lucas em caminho crítico; balancear tarefas | Gerson | 🔲 Aberto |
+| P1-3 | Notebook sem versionamento incremental (commits grandes) | Alto | Média | P1 | Commits pequenos por etapa, mensagens padronizadas | Gerson | 🟡 Mitigado |
+| P1-4 | Falta de validação cruzada rigorosa treino/val/teste | Alto | Média | P1 | Split fixo 32/4/4 documentado, métricas nos 3 conjuntos | Gerson | 🟡 Mitigado |
+| P1-5 | Dependência do Make Sense IA sem plano de contingência | Alto | Média | P1 | LabelImg/Roboflow como backup documentado | Carlos | ✅ Fechado |
+| P2-1 | Complexidade do escopo opcional 2 sem tempo real disponível | Médio | Média | P2 | Só iniciar após checkpoint de 07/10 confirmar folga | Gerson | 🔲 Aberto |
+| P2-2 | Links quebrados no README (notebook/vídeo) | Médio | Média | P2 | Testar manualmente cada link antes da entrega final | Ryann | 🔲 Aberto |
+| P2-3 | Falta de padronização de nomenclatura (Drive/repo) | Médio | Média | P2 | Convenção de nomes definida já na semana 1 | Ryann | ✅ Fechado |
+| P2-4 | Vídeo pode exceder o limite de 5 minutos | Médio | Média | P2 | Roteiro e duração-alvo definidos antes da gravação | Ryann | 🔲 Aberto |
+| P3-1 | Ausência de changelog de decisões técnicas | Baixo | Baixa | P3 | Manter `DECISIONS.md` com registro breve por marco | Gerson | 🔲 Aberto |
+| P3-2 | Ausência de testes de sanidade no notebook | Baixo | Baixa | P3 | Células de assert básicas antes de blocos de treino | Carlos | 🔲 Aberto |
+
+**Legenda de status:** ✅ Fechado (não se materializou ou foi resolvido) · 🟡 Mitigado (efeito reduzido, ainda acompanhado) · 🔲 Aberto (acompanhamento até a entrega).
+
+### Situação em 01/10/2026
+
+| ID | Situação | Evidência |
+|:--:|:--------:|-----------|
+| P0-2 | ✅ Fechado | GPU T4 do Colab validada; os treinos das Entregas 1 e 2 rodaram nela |
+| P0-3 | ✅ Fechado | 80 imagens e 80 rótulos conferidos (32/4/4 por classe); a verificação automática do notebook falha se faltar algum |
+| P1-1 | ✅ Fechado | Coleta concluída em 16–17/09, dentro do prazo |
+| P1-3 | 🟡 Mitigado | Notebooks versionados em commits por etapa (dataset → treino → avaliação → análise) |
+| P1-4 | 🟡 Mitigado | Métricas nos 3 conjuntos: treino e validação nas duas entregas e, na Entrega 2, mAP no teste da YOLO customizada (mAP50 = 0,970). Segue mitigado, não fechado: o teste tem só 8 imagens |
+| P1-5 | ✅ Fechado | Rotulação concluída no Make Sense IA, sem precisar do plano B |
+| P2-3 | ✅ Fechado | Nomes do Drive padronizados por script (`scripts/organizar_dataset_yolo.py`), documentados em `estrutura_drive.md` |
 
 ---
 
@@ -40,5 +54,5 @@
 ## Observações
 
 - Os 3 riscos P0 concentram-se nas fases iniciais do projeto (semana 1) — validar ambiente e iniciar coleta cedo reduz a maior parte do risco crítico.
-- Nenhum risco tem probabilidade "Alta" isolada — todos giram em torno de "Média", refletindo um projeto com plano bem definido, mas ainda não executado (sem histórico real de execução para calibrar melhor).
+- Nenhum risco tem probabilidade "Alta" isolada — todos giram em torno de "Média", refletindo um projeto com plano bem definido, mas ainda não executado no momento do planejamento (sem histórico real de execução para calibrar melhor). A situação atualizada de cada risco está na seção "Situação em 01/10/2026".
 - Este documento é a base para a Matriz GUT (`gut_matrix.md`) e para o Diagrama de Ishikawa (`ishikawa.md`).

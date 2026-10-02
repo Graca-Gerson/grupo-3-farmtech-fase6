@@ -25,7 +25,7 @@
 |:-----:|------|:--:|-------|
 | GER | Gerson Ferreira da Graça | 569624 | Liderança técnica, arquitetura, QA final |
 | LUC | Lucas Braga | 568712 | Integrante formal — capacidade reduzida (questão pessoal), sem carga no caminho crítico |
-| CAR | Carlos Leonardo Mazieri | 572809 | Coleta de dados, comparação de modelos |
+| CAR | Carlos Leonardo Mazieri | 572809 | Coleta e organização do dataset |
 | RYA | Ryann Pinto | 571003 | Documentação, rotulação, apresentação |
 
 ---
@@ -34,8 +34,8 @@
 
 | Integrante | Frente |
 |-----------|--------|
-| **Gerson** | Liderança do projeto, notebook da Entrega 1 (YOLO customizado), checkpoint de decisão, QA final e submissão |
-| **Carlos** | Coleta e organização do dataset, notebook da Entrega 2 (comparação de abordagens) |
+| **Gerson** | Liderança do projeto, notebooks da Entrega 1 (YOLO customizado) e da Entrega 2 (comparação de abordagens), checkpoint de decisão, QA final e submissão |
+| **Carlos** | Coleta e organização do dataset |
 | **Ryann** | Rotulação das imagens, vídeo e README da Entrega 1 |
 | **Lucas** | Participação pontual no escopo opcional, conforme disponibilidade — sem dependência do caminho crítico |
 
@@ -51,7 +51,7 @@
 | F6-04 — Notebook Entrega 1 (YOLO customizado) | A/R | — | C | — |
 | F6-05 — Vídeo + README Entrega 1 | C | — | — | A/R |
 | F6-06 — Checkpoint de decisão | A/R | — | C | C |
-| F6-07 — Notebook Entrega 2 (comparação) | C | — | A/R | — |
+| F6-07 — Notebook Entrega 2 (comparação; subtarefas F6-11 a F6-14) | A/R | — | C | — |
 | F6-08 — Escopo opcional 1 | I | A/R | — | — |
 | F6-09 — Escopo opcional 2 | I | — | — | A/R |
 | F6-10 — QA final e submissão | A/R | — | C | C |
@@ -60,6 +60,6 @@
 
 ## Observações
 
-- **Sobrecarga do Gerson:** concentra A/R em 4 das 10 atividades (F6-01, F6-04, F6-06, F6-10), incluindo o checkpoint de decisão e a QA final — ambas exigem visão de conjunto do projeto. Risco monitorado; se necessário, Carlos ou Ryann podem assumir parte da revisão em F6-10.
+- **Sobrecarga do Gerson:** concentra A/R em 5 das 10 atividades (F6-01, F6-04, F6-06, F6-07, F6-10), incluindo o checkpoint de decisão e a QA final — ambas exigem visão de conjunto do projeto. A F6-07 (Entrega 2) foi assumida por ele em 01/10. Risco monitorado; se necessário, Carlos ou Ryann podem assumir parte da revisão em F6-10.
 - **Lucas:** integrante formal do grupo, mantido no RACI por transparência e reconhecimento do trabalho em fases anteriores (Fase 5). Alocado apenas em atividade opcional (sem impacto em nota de boletim), sem dependência no caminho crítico do projeto.
 - Nenhuma atividade obrigatória (Entregas 1 e 2) depende exclusivamente de uma única pessoa sem consulta de pelo menos mais um integrante — reduz risco de bloqueio por ausência pontual.

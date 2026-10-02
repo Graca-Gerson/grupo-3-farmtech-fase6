@@ -13,10 +13,3 @@ runs/
 
 # OS
 .DS_Store
-
-# Arquivos operacionais internos da equipe (anotações e scripts locais — nunca versionar)
-CLAUDE.md
-NOTAS_AGENTE.md
-docs/briefing_fase6.md
-docs/Diagnostico_Fase6_VIKI_CORRIGIDO.md
-sync_notebook.sh

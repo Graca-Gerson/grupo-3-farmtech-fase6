@@ -78,7 +78,11 @@ grupo-3-farmtech-fase6/
 │   └── ishikawa_fase6.png
 ├── prints_teste/                     ← Prints do teste do modelo (imagens nunca vistas)
 │   ├── tomate_23_acerto.jpg          ← Tomate detectado corretamente (confiança 0,91)
-│   └── pimentao_23_erro.jpg          ← Erro: pimentão classificado como tomate
+│   ├── pimentao_23_erro.jpg          ← Erro: pimentão classificado como tomate
+│   └── entrega2/                     ← Prints da Entrega 2 (extraídos das saídas do notebook)
+│       ├── yolo_customizada_x_tradicional_8_imagens_teste.png
+│       ├── cnn_curvas_aprendizado.png
+│       └── cnn_respostas_8_imagens_teste.png
 ├── scripts/
 │   └── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
 ├── requirements.txt                  ← Dependências para execução local (macOS e Windows)

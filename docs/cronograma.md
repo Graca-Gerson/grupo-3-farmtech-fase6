@@ -11,16 +11,22 @@
 | Código | Tarefa | Responsável | Início | Fim | Prioridade | Status |
 |:------:|--------|:-----------:|:------:|:---:|:----------:|:------:|
 | F6-01 | Setup do repositório `grupo-3-farmtech-fase6` | Gerson | 15/09 | 15/09 | Alta | ✅ Concluída |
-| F6-02 | Coletar e organizar 80 imagens (tomate/pimentão) em pastas treino/val/teste | Carlos | 16/09 | 18/09 | Crítica | 🔲 Pendente |
-| F6-03 | Rotular imagens de treino via Make Sense IA (com backup LabelImg/Roboflow) | Ryann | 21/09 | 22/09 | Alta | 🔲 Pendente |
-| F6-04 | Desenvolver notebook Entrega 1 (YOLO customizado, 2 simulações de épocas) | Gerson | 23/09 | 28/09 | Crítica | 🔲 Pendente |
-| F6-05 | Gravar vídeo Entrega 1 e finalizar README | Ryann | 29/09 | 29/09 | Alta | 🔲 Pendente |
+| F6-02 | Coletar e organizar 80 imagens (tomate/pimentão) em pastas treino/val/teste | Carlos | 16/09 | 18/09 | Crítica | ✅ Concluída |
+| F6-03 | Rotular imagens de treino via Make Sense IA (com backup LabelImg/Roboflow) | Ryann | 21/09 | 22/09 | Alta | ✅ Concluída |
+| F6-04 | Desenvolver notebook Entrega 1 (YOLO customizado, 2 simulações de épocas) | Gerson | 23/09 | 28/09 | Crítica | ✅ Concluída (30/09) |
+| F6-05 | Gravar vídeo Entrega 1 e finalizar README | Ryann | 29/09 | 29/09 | Alta | 🔲 Pendente (prazo previsto vencido) |
 | F6-06 | Checkpoint de decisão — avaliar folga real antes de investir em escopo opcional | Gerson | 07/10 | 07/10 | Alta | 🔲 Pendente |
-| F6-07 | Desenvolver notebook Entrega 2 (YOLO tradicional + CNN do zero + comparação) | Carlos | 01/10 | 05/10 | Crítica | 🔲 Pendente |
+| F6-07 | Desenvolver notebook Entrega 2 (YOLO tradicional + CNN do zero + comparação) | Gerson | 01/10 | 05/10 | Crítica | 🔄 Pronta para revisão final |
 | F6-08 | *Escopo opcional 1* — ESP32-CAM/webcam reconhecendo objetos em tempo real | Lucas | 08/10 | 09/10 | Média (opcional) | 🔲 Pendente |
 | F6-09 | *Escopo opcional 2* — Transfer Learning + segmentação | Ryann | 08/10 | 12/10 | Média (opcional) | 🔲 Pendente |
 | F6-10 | QA final — testar links, revisar README, congelar commits, submeter | Gerson | 13/10 | 13/10 | Crítica | 🔲 Pendente |
+| F6-11 | Entrega 2 — YOLO tradicional (YOLOv8n com pesos do COCO, sem treino no dataset) aplicado ao teste | Gerson | 01/10 | 01/10 | Crítica | ✅ Concluída |
+| F6-12 | Entrega 2 — CNN treinada do zero para classificar a imagem inteira | Gerson | 01/10 | 02/10 | Crítica | ✅ Concluída |
+| F6-13 | Entrega 2 — Comparação crítica das 3 abordagens (facilidade de uso, precisão, tempo de treino e de inferência) | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
+| F6-14 | Entrega 2 — Notebook executado no Colab + README atualizado | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
 
+> **Subtarefas da Entrega 2:** F6-11 a F6-14 detalham a F6-07 (criadas em 01/10, quando a Entrega 2 começou); a F6-07 fecha após a revisão final do notebook.
+>
 > **Nota sobre datas:** F6-08 e F6-09 rodam em paralelo (responsáveis distintos: Lucas e Ryann) após o checkpoint F6-06, condicionadas à confirmação de que há folga real no cronograma — caso não haja, ambas podem ser descartadas sem penalidade (não valem nota de boletim).
 
 ---
@@ -34,7 +40,7 @@
 | E03 | Rotulações exportadas (formato YOLO) | 22/09 | Ryann |
 | E04 | Notebook Entrega 1 (YOLO customizado, 2 simulações) | 28/09 | Gerson |
 | E05 | Vídeo + README da Entrega 1 | 29/09 | Ryann |
-| E06 | Notebook Entrega 2 (comparação de 3 abordagens) | 05/10 | Carlos |
+| E06 | Notebook Entrega 2 (comparação de 3 abordagens) | 05/10 | Gerson |
 | E07 | *(condicional)* Escopo opcional 1 — sistema ESP32-CAM/webcam | 09/10 | Lucas |
 | E08 | *(condicional)* Escopo opcional 2 — Transfer Learning + segmentação | 12/10 | Ryann |
 | E09 | README final consolidado + link do vídeo | 13/10 | Gerson |
