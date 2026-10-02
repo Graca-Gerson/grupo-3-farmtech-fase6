@@ -4,6 +4,8 @@
 # Instalar: pip install -r requirements.txt
 # Python 3.12 ou 3.13 (numpy 2.5 não tem versão para 3.11 ou anterior)
 # Conferido em 27/09/2026: macOS (Apple Silicon) e Windows 64 bits
+# Versões de ultralytics, torch e tensorflow alinhadas em 02/10/2026 às execuções oficiais
+# no Colab (ultralytics 8.4.170, torch 2.11.0, tensorflow 2.20.0); torchvision 0.26.0 é o par do torch 2.11.0
 #
 # ⚠️ Só para execução LOCAL. No Google Colab NÃO use este arquivo — o Colab já traz
 #    torch/tensorflow com GPU; o notebook instala apenas o ultralytics na 1ª célula.
@@ -11,17 +13,17 @@
 #    (passo a passo no README, seção "Como Executar → Execução local").
 
 # Detecção de objetos — Entrega 1 (YOLO customizado) e Entrega 2 (YOLO tradicional)
-ultralytics==8.4.164
+ultralytics==8.4.170
 
 # PyTorch — motor do YOLO
 # macOS: esta versão já usa a GPU da Apple (MPS) automaticamente
 # Windows: a versão do PyPI é só CPU; para GPU NVIDIA, ver README
-torch==2.14.0
-torchvision==0.29.0
+torch==2.11.0
+torchvision==0.26.0
 
 # TensorFlow/Keras — CNN do zero (Entrega 2) e Transfer Learning (escopo opcional 2)
 # Windows: roda só em CPU (TensorFlow não suporta GPU nativa no Windows desde a 2.11)
-tensorflow==2.21.0
+tensorflow==2.20.0
 
 # Visão computacional e dados
 opencv-python==5.0.0.93   # leitura de imagens e captura por webcam (escopo opcional 1)

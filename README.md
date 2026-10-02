@@ -225,7 +225,7 @@ pip install -r requirements.txt
 **🪟 Windows com placa de vídeo NVIDIA** — instale primeiro o PyTorch com suporte a GPU (CUDA), **depois** o restante:
 
 ```bash
-pip install torch==2.14.0 torchvision==0.29.0 --index-url https://download.pytorch.org/whl/cu126
+pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
 ```
 
