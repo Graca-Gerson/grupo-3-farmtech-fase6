@@ -13,3 +13,6 @@ runs/
 
 # OS
 .DS_Store
+
+# Overlays de gravação do vídeo (assets do OBS, não são entregáveis do projeto)
+apresentacao/
