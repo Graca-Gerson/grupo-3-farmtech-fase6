@@ -24,8 +24,11 @@
 | F6-12 | Entrega 2 — CNN treinada do zero para classificar a imagem inteira | Gerson | 01/10 | 02/10 | Crítica | ✅ Concluída |
 | F6-13 | Entrega 2 — Comparação crítica das 3 abordagens (facilidade de uso, precisão, tempo de treino e de inferência) | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
 | F6-14 | Entrega 2 — Notebook executado no Colab + README atualizado | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
+| F6-15 | *Escopo opcional 1* — detecção em tempo real via webcam com o `best.pt` da Entrega 1 (script + README) | Gerson | 02/10 | 09/10 | Média (opcional) | 🔄 Em andamento |
 
 > **Subtarefas da Entrega 2:** F6-11 a F6-14 detalham a F6-07 (criadas em 01/10, quando a Entrega 2 começou); a F6-07 fecha após a revisão final do notebook.
+>
+> **Subtarefa do escopo opcional 1:** a F6-15 detalha a F6-08 e foi antecipada para 02/10, porque as Entregas 1 e 2 já estavam executadas; usa webcam no lugar da ESP32-CAM, por falta da placa.
 >
 > **Nota sobre datas:** F6-08 e F6-09 rodam em paralelo (responsáveis distintos: Lucas e Ryann) após o checkpoint F6-06, condicionadas à confirmação de que há folga real no cronograma — caso não haja, ambas podem ser descartadas sem penalidade (não valem nota de boletim).
 
