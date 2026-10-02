@@ -77,8 +77,14 @@ grupo-3-farmtech-fase6/
 │   ├── ishikawa.md                   ← Causas raiz (diagrama de Ishikawa)
 │   └── ishikawa_fase6.png
 ├── prints_teste/                     ← Prints do teste do modelo (imagens nunca vistas)
+│   ├── tomate_17_acerto.jpg          ← Tomate detectado corretamente (confiança 0,92)
 │   ├── tomate_23_acerto.jpg          ← Tomate detectado corretamente (confiança 0,91)
+│   ├── tomate_29_acerto.jpg          ← Tomate detectado corretamente (confiança 0,96)
+│   ├── tomate_37_acerto.jpg          ← Tomate detectado corretamente (confiança 0,97)
+│   ├── pimentao_12_acerto.jpg        ← Pimentão detectado corretamente (confiança 0,94)
 │   ├── pimentao_23_erro.jpg          ← Erro: pimentão classificado como tomate
+│   ├── pimentao_29_acerto.jpg        ← Pimentão detectado corretamente (confiança 0,81)
+│   ├── pimentao_36_acerto.jpg        ← Pimentão detectado corretamente (confiança 0,77)
 │   └── entrega2/                     ← Prints da Entrega 2 (extraídos das saídas do notebook)
 │       ├── yolo_customizada_x_tradicional_8_imagens_teste.png
 │       ├── cnn_curvas_aprendizado.png
@@ -121,7 +127,7 @@ Captura de imagens (celular, 80 fotos: 40 tomate + 40 pimentão)
 
 Prints do teste: [`prints_teste/`](./prints_teste/) (resultados completos na seção 7 do notebook).
 
-> **Prints parciais:** a pasta tem, por enquanto, 2 das 8 imagens de teste — um acerto (`tomate_23`) e o único erro do modelo (`pimentao_23`). As imagens processadas das outras 6 foram geradas no disco temporário do Colab e não foram guardadas; o conjunto completo das 8 será adicionado quando a predição for executada novamente, durante a gravação do vídeo da Entrega 1. O resultado das 8 imagens está registrado na tabela da seção 7.1 do notebook.
+> **Origem dos prints:** as 8 imagens de teste processadas pelo modelo oficial da Entrega 1 (60 épocas, `best.pt` do treino de 30/09, confiança mínima 0,5). `tomate_23` e `pimentao_23` foram extraídos da execução registrada no notebook; os outros 6 foram gerados com o mesmo `best.pt` e os mesmos parâmetros da célula de predição — as detecções são idênticas às da tabela da seção 7.1.
 
 ### Entrega 2 — Comparação de Abordagens
 
