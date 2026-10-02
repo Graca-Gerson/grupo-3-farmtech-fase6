@@ -27,8 +27,8 @@
 | 1 | Montar dataset customizado (80 imagens: 40 tomate + 40 pimentão) | ✅ |
 | 2 | Rotular imagens de treino | ✅ |
 | 3 | Treinar YOLO customizado com 2 configurações de épocas (30 e 60) | ✅ |
-| 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | 🔄 Notebook da Entrega 2 pronto, execução no Colab pendente |
-| 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entrega 1 documentada no notebook |
+| 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | ✅ |
+| 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
 | 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔲 |
 | 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔲 |
@@ -37,7 +37,7 @@
 
 ## ✅ Status do Projeto
 
-> 🔄 **Entrega 1 concluída no notebook** — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Entrega 2: [notebook de comparação](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) pronto, aguardando a execução oficial no Colab.
+> 🔄 **Entregas 1 e 2 concluídas nos notebooks** — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Entrega 2: [notebook de comparação](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado no Colab, com as três abordagens medidas nas mesmas 8 imagens de teste e a análise crítica na seção 8.
 
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
@@ -51,7 +51,7 @@
 | Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
 | Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
 | Vídeo da Entrega 1 | 🔲 | Próxima etapa |
-| Comparação de abordagens (Entrega 2) | 🔄 | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) pronto (YOLO customizada × YOLO tradicional × CNN do zero); falta a execução oficial no Colab e a análise final (seção 8) |
+| Comparação de abordagens (Entrega 2) | ✅ | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado: YOLO customizada e CNN do zero acertaram 7 de 8 imagens de teste; YOLO tradicional 0 de 8 (não conhece as classes), mas localizou os 8 objetos — tabela na seção 7 e análise crítica na seção 8 |
 | README final + vídeo | 🔲 | Última etapa antes da entrega |
 
 ---
@@ -130,6 +130,8 @@ Sobre a mesma base de dados (tomate × pimentão), três abordagens são compara
 | CNN treinada do zero | Rede convolucional com arquitetura própria, treinada para classificar a imagem inteira |
 
 Critérios de comparação: facilidade de uso/integração, precisão, tempo de treinamento, tempo de inferência — todos medidos nas mesmas 8 imagens de teste da Entrega 1.
+
+**Resultado em uma linha:** a YOLO customizada (mAP50 de 0,970 no teste) é a indicada para detectar e localizar os frutos; a CNN do zero empatou na classificação da imagem inteira (7 de 8, errando outra imagem) com treino de cerca de 11 s; a YOLO tradicional sabe *onde* está o objeto, mas não *o que* ele é. Números, tempos e limitações na tabela da seção 7 e na seção 8 do notebook.
 
 Notebook: [`GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb`](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb)
 
