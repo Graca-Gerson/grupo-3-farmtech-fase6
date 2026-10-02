@@ -8,7 +8,7 @@
 # no Colab (ultralytics 8.4.170, torch 2.11.0, tensorflow 2.20.0); torchvision 0.26.0 é o par do torch 2.11.0
 #
 # ⚠️ Só para execução LOCAL. No Google Colab NÃO use este arquivo — o Colab já traz
-#    torch/tensorflow com GPU; o notebook instala apenas o ultralytics na 1ª célula.
+#    torch/tensorflow com GPU; os notebooks instalam apenas o ultralytics (3ª célula de código).
 # ⚠️ Windows com placa NVIDIA: instale o torch com CUDA ANTES deste arquivo
 #    (passo a passo no README, seção "Como Executar → Execução local").
 
