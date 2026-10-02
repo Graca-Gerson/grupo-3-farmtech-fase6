@@ -90,7 +90,8 @@ grupo-3-farmtech-fase6/
 │       ├── cnn_curvas_aprendizado.png
 │       └── cnn_respostas_8_imagens_teste.png
 ├── scripts/
-│   └── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
+│   ├── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
+│   └── gerar_diagramas_fase6.py      ← Gera docs/estrutura_drive_fase6.png e docs/raci_fase6.png
 ├── requirements.txt                  ← Dependências para execução local (macOS e Windows)
 └── README.md
 ```
