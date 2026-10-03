@@ -13,7 +13,7 @@ O enunciado propõe uma ESP32-CAM **ou** uma webcam. O grupo não tem uma ESP32-
 | Etapa | Com ESP32-CAM | Com webcam (este projeto) |
 |-------|---------------|---------------------------|
 | Captura | Câmera da placa, enviada por Wi-Fi como stream de vídeo | Câmera do computador (USB ou integrada) |
-| Leitura dos quadros | `cv2.VideoCapture('http://<ip-da-placa>:81/stream')` | `cv2.VideoCapture(0)` |
+| Leitura dos quadros | `cv2.VideoCapture('http://<ip-da-placa>:81/stream')` | `cv2.VideoCapture(n)` — `n` é a câmera encontrada (ou escolhida, se houver mais de uma) |
 | Inferência | `best.pt` da Entrega 1, rodando no computador | Igual |
 | Saída | Caixas, classe e confiança na tela + prints | Igual |
 
@@ -239,10 +239,21 @@ E `ls` deve listar `README.md`, `deteccao_tempo_real.py` e `modelo`. Se não, ro
 python deteccao_tempo_real.py
 ```
 
-Este comando inicia o programa. Em poucos segundos o Terminal mostra três linhas parecidas com estas:
+Este comando inicia o programa. Em poucos segundos o Terminal mostra:
 
 ```
 modelo: /Users/seunome/grupo-3-farmtech-fase6/ir_alem/ir_alem_1_deteccao_tempo_real/modelo/best.pt | classes: {0: 'tomate', 1: 'pimentao'}
+procurando câmeras...
+```
+
+O programa procura as câmeras do computador (leva 2 ou 3 segundos):
+
+- **Se o computador tiver só uma câmera**, ele segue sozinho — **nenhuma pergunta aparece**.
+- **Se tiver mais de uma** (por exemplo, a câmera do Mac e a do iPhone ou iPad, que o macOS oferece quando estão por perto e na mesma conta Apple), aparece uma **lista de câmeras** e o programa espera você digitar um número. Veja [Se aparecer uma lista de câmeras](#se-aparecer-uma-lista-de-cameras), logo depois da receita do Windows.
+
+Depois disso aparecem estas duas linhas (o número depois de `fonte de vídeo` é o da câmera usada):
+
+```
 fonte de vídeo: 0 | confiança mínima: 0.5
 teclas: s = salvar print | q ou Esc = sair
 ```
@@ -474,10 +485,21 @@ E `ls` deve listar `README.md`, `deteccao_tempo_real.py` e `modelo`. Se não, ro
 python deteccao_tempo_real.py
 ```
 
-Este comando inicia o programa. Em alguns segundos o PowerShell mostra três linhas parecidas com estas:
+Este comando inicia o programa. Em alguns segundos o PowerShell mostra:
 
 ```
 modelo: C:\Users\seunome\grupo-3-farmtech-fase6\ir_alem\ir_alem_1_deteccao_tempo_real\modelo\best.pt | classes: {0: 'tomate', 1: 'pimentao'}
+procurando câmeras...
+```
+
+O programa procura as câmeras do computador (leva alguns segundos):
+
+- **Se o computador tiver só uma câmera** (o caso mais comum), ele segue sozinho — **nenhuma pergunta aparece**.
+- **Se tiver mais de uma** (por exemplo, a câmera do notebook e uma webcam USB), aparece uma **lista de câmeras** e o programa espera você digitar um número. Veja [Se aparecer uma lista de câmeras](#se-aparecer-uma-lista-de-cameras), logo abaixo.
+
+Depois disso aparecem estas duas linhas (o número depois de `fonte de vídeo` é o da câmera usada):
+
+```
 fonte de vídeo: 0 | confiança mínima: 0.5
 teclas: s = salvar print | q ou Esc = sair
 ```
@@ -503,9 +525,36 @@ python deteccao_tempo_real.py
 
 (Se a ativação der o erro de "execução de scripts desabilitada", rode antes o `Set-ExecutionPolicy` do passo 6.)
 
+<a id="se-aparecer-uma-lista-de-cameras"></a>
+
+### 📷 Se aparecer uma lista de câmeras (macOS e Windows)
+
+Só acontece quando o computador tem **mais de uma câmera disponível**. Com uma câmera só, pule esta seção. A lista aparece no **Terminal/PowerShell** (não na janela), antes de a janela abrir, e é parecida com esta:
+
+```
+Foram encontradas 2 câmeras neste computador:
+  [0] Dispositivo 0 — imagem de 1920x1080
+  [1] Dispositivo 1 — imagem de 1280x720
+  Câmeras que o sistema informa: Câmera FaceTime HD, Câmera do iPhone.
+  (a ordem desses nomes pode não ser a mesma dos números acima)
+  Se a imagem que abrir não for da câmera desejada, aperte q na janela e rode de novo escolhendo outro número.
+Digite o número da câmera que deseja usar (0, 1) e aperte Enter:
+```
+
+Como escolher:
+
+1. **Digite só o número** entre colchetes da câmera desejada (por exemplo, `1`) e aperte **Enter**.
+2. Se digitar algo que não está na lista (uma letra, um número que não aparece, ou só Enter), o programa avisa `... não é uma opção válida` e **pergunta de novo** — é só digitar um dos números mostrados.
+3. **Não sabe qual é qual?** O número de pixels ajuda: câmeras de celular costumam ter imagem maior (por exemplo, `1920x1080`) do que a câmera de notebooks mais antigos (`1280x720`). A linha "Câmeras que o sistema informa" (só no macOS) mostra os nomes, mas **não diz qual número é qual** — a ordem dos nomes pode ser diferente da dos números. Na dúvida, escolha um número: se a janela mostrar a imagem da câmera errada, aperte `q` e rode o programa de novo (passo 11) escolhendo o outro.
+4. Para **não ver a lista** nas próximas vezes, rode já informando o número da câmera — por exemplo, `python deteccao_tempo_real.py --fonte 1`.
+
+Para desistir sem abrir a câmera, aperte **Ctrl + C**.
+
 <a id="o-que-acontece-na-janela"></a>
 
 ### 👀 O que acontece na janela (macOS e Windows)
+
+A janela abre logo depois que o programa encontra a câmera (ou depois que você escolhe uma, se apareceu a lista).
 
 **A classificação é automática e contínua.** Assim que a janela abre, o programa analisa **cada imagem da câmera, várias vezes por segundo, sem você apertar nada**:
 
@@ -542,8 +591,11 @@ print salvo: .../ir_alem/ir_alem_1_deteccao_tempo_real/prints/deteccao_20261003_
 | 🍎 `command not found: python` | Mesmo caso acima: fora do ambiente virtual, o macOS só conhece `python3` | Faça os passos 4 e 6 e rode de novo |
 | 🪟 `py`/`python` **não é reconhecido** | O Python não está instalado ou não foi adicionado ao PATH | Refaça o passo 2 (marcando **"Add python.exe to PATH"**) e reabra o PowerShell |
 | 🪟 Erro vermelho dizendo que a **execução de scripts foi desabilitada** | O Windows bloqueia o script de ativação por segurança | Rode `Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass` e ative de novo (passo 6) |
-| `ERRO: não foi possível abrir a fonte de vídeo "0"` | Nenhuma câmera disponível: outro programa está usando ou não existe câmera | Feche FaceTime/Zoom/Teams/Meet e tente de novo; com uma segunda câmera (USB), rode `python deteccao_tempo_real.py --fonte 1` |
+| `ERRO: nenhuma câmera encontrada` | O programa não achou nenhuma câmera livre: ela está desconectada ou outro programa está usando | Feche FaceTime/Zoom/Teams/Meet (e o navegador, se estiver numa chamada) e rode de novo |
+| `ERRO: não foi possível abrir a fonte de vídeo "1"` (com `--fonte`) | Não existe câmera com esse número, ou ela está em uso | Rode sem `--fonte` para o programa procurar as câmeras e mostrar os números disponíveis |
 | `ERRO: a câmera abriu, mas não entregou nenhuma imagem` | O sistema não deu permissão de câmera ao terminal | Refaça o passo 9, **feche e reabra** o terminal, e repita os passos 4, 6 e 10 antes de rodar |
+| `"..." não é uma opção válida` | Na lista de câmeras, foi digitado algo que não é um dos números mostrados | Digite só um dos números entre colchetes e aperte Enter |
+| A janela abriu com a imagem da **câmera errada** | Foi escolhido o número da outra câmera na lista | Aperte `q` na janela e rode de novo escolhendo o outro número |
 | A janela abre, mas fica sempre `nenhuma detecção` | O modelo não está reconhecendo o que vê | Aproxime o fruto, use fundo liso e mais luz; o modelo só conhece tomate e pimentão |
 | As teclas `s`/`q` não fazem nada | A janela da câmera não está selecionada | Clique uma vez na janela da câmera e aperte a tecla de novo |
 | `ERROR` durante o `pip install` falando de `Requires-Python` | Python antigo (3.11 ou anterior) | Instale o Python 3.13 (passo 2), apague a pasta `.venv` e refaça os passos 5, 6 e 7 |
@@ -566,7 +618,7 @@ No modo `--sem-janela`, **cada quadro** é salvo em `prints/` — para vídeos l
 
 | Opção | Padrão | Para que serve |
 |-------|--------|----------------|
-| `--fonte` | `0` | Índice da webcam (`0`, `1`…), URL de stream (ESP32-CAM) ou arquivo de vídeo |
+| `--fonte` | procura as câmeras | Número da câmera (`0`, `1`…, sem lista de escolha), URL de stream (ESP32-CAM) ou arquivo de vídeo. Sem esta opção, o programa procura as câmeras e, se houver mais de uma, pergunta qual usar |
 | `--modelo` | `modelo/best.pt` | Caminho do modelo |
 | `--conf` | `0.5` | Confiança mínima para mostrar uma detecção — o mesmo limiar usado no teste da Entrega 1 |
 | `--imgsz` | `640` | Tamanho de entrada da rede (o mesmo do treino) |
@@ -579,7 +631,8 @@ No modo `--sem-janela`, **cada quadro** é salvo em `prints/` — para vídeos l
 
 - Mensagens de erro claras quando o modelo não é encontrado, quando a câmera não abre e quando ela abre sem entregar imagens.
 - Execução completa com o `best.pt` oficial, usando como fonte um vídeo montado com as 8 imagens de teste da Entrega 1 (sem janela, em CPU): 8 quadros processados, caixas, classe e confiança desenhadas e salvas, cerca de 9 FPS em CPU num Mac.
-- **Ainda não testado ao vivo com a webcam** — o teste com câmera real e a gravação do vídeo são os próximos passos.
+- Escolha de câmera testada com hardware real num Mac com duas câmeras (a do próprio Mac e um iPhone pela Câmera de Continuidade): as duas foram encontradas, a lista apareceu com a resolução de cada uma, entradas inválidas foram recusadas sem travar e a câmera escolhida entregou imagem. Os demais casos (uma câmera só, números com lacuna, nenhuma câmera, câmera sem permissão, sem teclado para responder) foram testados por simulação. **No Windows, com duas câmeras reais, ainda não foi testado.**
+- **Ainda não testado ao vivo com tomates e pimentões na frente da câmera** — esse teste e a gravação do vídeo são os próximos passos.
 
 ## ⚠️ Limitações esperadas
 
