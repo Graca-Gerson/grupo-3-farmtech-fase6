@@ -31,7 +31,7 @@
 | 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
 | 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente |
-| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Estrutura inicial pronta ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); treinos a executar |
+| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); vídeo pendente |
 
 ---
 

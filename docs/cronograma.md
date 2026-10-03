@@ -25,7 +25,7 @@
 | F6-13 | Entrega 2 — Comparação crítica das 3 abordagens (facilidade de uso, precisão, tempo de treino e de inferência) | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
 | F6-14 | Entrega 2 — Notebook executado no Colab + README atualizado | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
 | F6-15 | *Escopo opcional 1* — detecção em tempo real via webcam com o `best.pt` da Entrega 1 (script + README) | Gerson | 02/10 | 09/10 | Baixa | 🔄 Em andamento |
-| F6-16 | *Escopo opcional 2* — CNN do zero × Transfer Learning com Fine Tuning (MobileNetV2), com e sem segmentação (U2-Net) | Gerson | 03/10 | 12/10 | Baixa | 🔄 Em andamento (estrutura inicial pronta) |
+| F6-16 | *Escopo opcional 2* — CNN do zero × Transfer Learning com Fine Tuning (MobileNetV2), com e sem segmentação (U2-Net) | Gerson | 03/10 | 12/10 | Baixa | 🔄 Em andamento (notebook completo; falta o vídeo) |
 
 > **Subtarefas da Entrega 2:** F6-11 a F6-14 detalham a F6-07 (criadas em 01/10, quando a Entrega 2 começou); com as quatro concluídas e a revisão final do notebook feita, a F6-07 foi concluída.
 >

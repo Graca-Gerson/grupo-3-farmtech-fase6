@@ -2,7 +2,7 @@
 
 > **FIAP — Fase 6 · Escopo opcional 2** · Classificação de tomate e pimentão com uma rede pré-treinada com Fine Tuning (MobileNetV2) e com pré-segmentação por uma rede neural (U2-Net)
 
-> 🔄 **Situação:** código pronto para as **4 combinações** da tabela 2×2: o notebook carrega o dataset, segmenta com a U2-Net (seções 1 a 3) e treina a CNN do zero com segmentação (seção 4) e a MobileNetV2 com Fine Tuning, sem e com segmentação (seções 5 e 6). Faltam a execução dos treinos com GPU, a tabela comparativa (seção 7) e as conclusões (seção 8).
+> ✅ **Situação:** notebook completo — executado no Google Colab com GPU, com as 4 combinações treinadas e avaliadas, a tabela comparativa (seção 7) e as conclusões (seção 8). Falta só a gravação do vídeo.
 
 ## 🎯 Objetivo
 
@@ -23,13 +23,35 @@ As duas hipóteses se cruzam em 4 combinações, todas avaliadas nas mesmas 8 im
 
 | | **Sem segmentação** | **Com segmentação (U2-Net)** |
 |:--|:--:|:--:|
-| **CNN do zero** | resultado da Entrega 2 (não é treinada de novo) | seção 4 do notebook ✅ código pronto |
-| **Transfer Learning + Fine Tuning (MobileNetV2)** | seção 5 do notebook ✅ código pronto | seção 6 do notebook ✅ código pronto |
+| **CNN do zero** | 7/8 — resultado da Entrega 2 (não é treinada de novo) | 6/8 — seção 4 do notebook |
+| **Transfer Learning + Fine Tuning (MobileNetV2)** | 6/8 — seção 5 do notebook | 6/8 — seção 6 do notebook |
 
 Para cada combinação, o notebook vai medir:
 - a **acurácia no teste**;
 - o **tempo de treino** (no Transfer Learning, a soma das duas fases);
 - o **tempo de inferência por imagem**. Nas versões com segmentação, esse tempo inclui a U2-Net, porque ela faz parte do caminho até a resposta.
+
+## 📊 Resultados
+
+Execução no Google Colab com GPU, nas mesmas 8 imagens de teste (detalhes nas seções 4.2, 5.2 e 6.2 do notebook):
+
+| Abordagem | Segmentação | Acurácia no teste | Tempo de treino | Inferência por imagem (mediana) |
+|:--|:--:|:--:|:--:|:--:|
+| CNN do zero (Entrega 2) | não | 7/8 | 10,8 s | — |
+| CNN do zero | U2-Net | 6/8 | 13,2 s | 1.304,2 ms |
+| MobileNetV2 + Fine Tuning | não | 6/8 | 32,4 s | 172,4 ms |
+| MobileNetV2 + Fine Tuning | U2-Net | 6/8 | 28,6 s | 1.404,9 ms |
+
+A linha da Entrega 2 vem de outra execução do Colab e serve de referência; as outras três foram medidas nesta execução. Nas versões com segmentação, a inferência inclui a U2-Net.
+
+**Conclusão principal:** neste dataset pequeno (64 fotos de treino), **nenhuma das duas técnicas trouxe ganho de acurácia** sobre a CNN do zero da Entrega 2, a abordagem mais simples:
+
+- **Hipótese 1 — a rede pré-treinada é melhor?** Não se confirmou: a MobileNetV2 com Fine Tuning acertou 6 de 8, contra 7 de 8 da CNN do zero.
+- **Hipótese 2 — segmentar antes ajuda?** Também não: na CNN do zero, a acurácia foi de 7/8 (Entrega 2) para 6/8; no Transfer Learning, ficou igual (6/8), mas a inferência ficou cerca de **8 vezes mais lenta** (de 172,4 ms para 1.404,9 ms por imagem) por causa da U2-Net.
+- Os erros se concentraram nas mesmas imagens — o `pimentao_23` errou em 3 das 4 combinações —, o que indica um caso difícil do dataset, e não uma falha de uma técnica específica.
+- **Ressalva:** com só 8 imagens de teste, cada acerto vale 12,5 pontos percentuais; as diferenças são indicação, não prova.
+
+A análise completa está na seção 8 do notebook.
 
 ## 🧠 Escolhas e justificativas
 
@@ -65,11 +87,11 @@ Resultado: a **U2-Net acertou o objeto nas 8 imagens**, contra 5 do GrabCut. O c
 
 ![GrabCut × U2-Net nas mesmas 3 imagens](./imagens/grabcut_x_u2net.png)
 
-## ✅ O que já foi verificado (fora do Colab, sem treino de verdade)
+## ✅ Verificações feitas antes da execução oficial (fora do Colab)
 
 - **Carregamento do dataset:** a versão sem segmentação é **idêntica, pixel a pixel**, à entrada que a CNN da Entrega 2 recebeu.
 - **Segmentação:** a U2-Net rodou nas 80 imagens, sem nenhuma falha de máscara. O teste visual da seção 3.1 está na figura acima.
-- **Código dos treinos (seções 4, 5 e 6):** o notebook inteiro foi executado com **1 época** (na CNN e em cada fase do Transfer Learning), só para provar que roda de ponta a ponta: treino, avaliação no teste e salvamento dos 3 modelos, sem nenhum erro. No Transfer Learning, os pesos treináveis bateram com o planejado: 1.281 na fase 1 (só o classificador) e 1.207.361 na fase 2. Esses números de treino **não são resultado**: o treino real será feito no Colab com GPU.
+- **Código dos treinos (seções 4, 5 e 6):** antes da execução oficial, o notebook inteiro foi executado com **1 época**, só para provar que roda de ponta a ponta, sem nenhum erro. No Transfer Learning, os pesos treináveis bateram com o planejado: 1.281 na fase 1 (só o classificador) e 1.207.361 na fase 2 — os mesmos números da execução oficial no Colab.
 
 ## ▶️ Como Executar
 
