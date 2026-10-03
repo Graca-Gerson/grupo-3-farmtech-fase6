@@ -2,7 +2,7 @@
 
 > **FIAP — Fase 6 · Escopo opcional 2** · Classificação de tomate e pimentão com uma rede pré-treinada com Fine Tuning (MobileNetV2) e com pré-segmentação por uma rede neural (U2-Net)
 
-> 🔄 **Situação:** estrutura em construção. O notebook já carrega o dataset, segmenta as imagens com a U2-Net (seções 1 a 3) e tem o código do Transfer Learning com Fine Tuning (seções 5 e 6). Ainda faltam a CNN com segmentação (seção 4), a execução dos treinos com GPU, a tabela comparativa (seção 7) e as conclusões (seção 8).
+> 🔄 **Situação:** código pronto para as **4 combinações** da tabela 2×2: o notebook carrega o dataset, segmenta com a U2-Net (seções 1 a 3) e treina a CNN do zero com segmentação (seção 4) e a MobileNetV2 com Fine Tuning, sem e com segmentação (seções 5 e 6). Faltam a execução dos treinos com GPU, a tabela comparativa (seção 7) e as conclusões (seção 8).
 
 ## 🎯 Objetivo
 
@@ -23,8 +23,8 @@ As duas hipóteses se cruzam em 4 combinações, todas avaliadas nas mesmas 8 im
 
 | | **Sem segmentação** | **Com segmentação (U2-Net)** |
 |:--|:--:|:--:|
-| **CNN do zero** | resultado da Entrega 2 (não é treinada de novo) | seção 4 do notebook |
-| **Transfer Learning + Fine Tuning (MobileNetV2)** | seção 5 do notebook | seção 6 do notebook |
+| **CNN do zero** | resultado da Entrega 2 (não é treinada de novo) | seção 4 do notebook ✅ código pronto |
+| **Transfer Learning + Fine Tuning (MobileNetV2)** | seção 5 do notebook ✅ código pronto | seção 6 do notebook ✅ código pronto |
 
 Para cada combinação, o notebook vai medir:
 - a **acurácia no teste**;
@@ -32,6 +32,8 @@ Para cada combinação, o notebook vai medir:
 - o **tempo de inferência por imagem**. Nas versões com segmentação, esse tempo inclui a U2-Net, porque ela faz parte do caminho até a resposta.
 
 ## 🧠 Escolhas e justificativas
+
+**CNN do zero com segmentação (seção 4):** é a **mesma CNN da Entrega 2** — mesmas camadas, hiperparâmetros e critério de parada (conferido camada a camada) —, só que recebendo as imagens pré-segmentadas pela U2-Net. A hipótese: com só 64 fotos de treino, uma rede que aprende do zero pode se apoiar no fundo (piso, parede, mesa) para separar as classes; apagando o fundo, a expectativa é que ela se concentre no fruto. O efeito contrário também é possível — o recorte muda a escala do fruto e tira o contexto —, e é isso que a comparação vai medir.
 
 **MobileNetV2:** é leve (cerca de 2,26 milhões de parâmetros na parte convolucional), tem pesos da ImageNet prontos no Keras e aceita entrada de 128×128, o mesmo tamanho da CNN da Entrega 2. Isso mantém a comparação justa.
 
@@ -67,7 +69,7 @@ Resultado: a **U2-Net acertou o objeto nas 8 imagens**, contra 5 do GrabCut. O c
 
 - **Carregamento do dataset:** a versão sem segmentação é **idêntica, pixel a pixel**, à entrada que a CNN da Entrega 2 recebeu.
 - **Segmentação:** a U2-Net rodou nas 80 imagens, sem nenhuma falha de máscara. O teste visual da seção 3.1 está na figura acima.
-- **Código do Transfer Learning:** foi executado com **1 época em cada fase**, só para provar que roda de ponta a ponta: fase 1, descongelamento, fase 2, avaliação e salvamento dos modelos. Os pesos treináveis bateram com o planejado: 1.281 na fase 1 (só o classificador) e 1.207.361 na fase 2. Esses números de treino **não são resultado**: o treino real será feito no Colab com GPU.
+- **Código dos treinos (seções 4, 5 e 6):** o notebook inteiro foi executado com **1 época** (na CNN e em cada fase do Transfer Learning), só para provar que roda de ponta a ponta: treino, avaliação no teste e salvamento dos 3 modelos, sem nenhum erro. No Transfer Learning, os pesos treináveis bateram com o planejado: 1.281 na fase 1 (só o classificador) e 1.207.361 na fase 2. Esses números de treino **não são resultado**: o treino real será feito no Colab com GPU.
 
 ## ▶️ Como Executar
 
@@ -108,8 +110,9 @@ O notebook roda no **Google Colab**, um serviço do Google que executa o código
 | 3.0 (U2-Net) | Na primeira vez, o download do modelo da U2-Net (cerca de 176 MB) |
 | 3.1 (teste visual) | Uma figura com 3 linhas: original, máscara e imagem recortada |
 | 3.2 (segmentação de todas) | O tempo total da U2-Net nas 80 imagens |
-| 5.1 e 6.1 (treinos) | As épocas da fase 1 e da fase 2 e, ao final, um resumo com o tempo de treino e o modelo final usado |
-| 5.2 e 6.2 (teste) | Uma tabela com a resposta para cada uma das 8 imagens de teste e a acurácia |
+| 4.1 (CNN do zero com segmentação) | As épocas do treino e, ao final, uma linha começando com `Treino:` com o tempo, as épocas rodadas e a melhor época |
+| 5.1 e 6.1 (Transfer Learning) | As épocas da fase 1 e da fase 2 e, ao final, um resumo com o tempo de treino e o modelo final usado |
+| 4.2, 5.2 e 6.2 (teste) | Uma tabela com a resposta para cada uma das 8 imagens de teste e a acurácia |
 
 **Passo 6 — Não salvar o notebook de volta no GitHub.** Se o Colab perguntar sobre salvar alterações ao fechar, **descarte**. Não use **Arquivo → Salvar uma cópia no GitHub**.
 
@@ -134,5 +137,5 @@ ir_alem/ir_alem_2_transfer_learning/
 
 No Drive, cada execução grava em `Resultados/ir_alem_2_<executor>/`:
 - a figura `u2net_exemplos.png`;
-- os modelos `mobilenetv2_sem_segmentacao.keras` e `mobilenetv2_com_segmentacao.keras`;
+- os modelos `cnn_do_zero_com_segmentacao.keras`, `mobilenetv2_sem_segmentacao.keras` e `mobilenetv2_com_segmentacao.keras`;
 - o histórico de treino de cada modelo, em CSV.
