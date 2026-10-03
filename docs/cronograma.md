@@ -15,17 +15,17 @@
 | F6-03 | Rotular imagens de treino via Make Sense IA (com backup LabelImg/Roboflow) | Ryann | 21/09 | 22/09 | Alta | ✅ Concluída |
 | F6-04 | Desenvolver notebook Entrega 1 (YOLO customizado, 2 simulações de épocas) | Gerson | 23/09 | 28/09 | Crítica | ✅ Concluída (30/09) |
 | F6-05 | Gravar vídeo Entrega 1 e finalizar README | Ryann | 29/09 | 29/09 | Alta | 🔲 Pendente (prazo previsto vencido) |
-| F6-06 | Checkpoint de decisão — avaliar folga real antes de investir em escopo opcional | Gerson | 07/10 | 07/10 | Alta | 🔲 Pendente |
+| F6-06 | Checkpoint de decisão — avaliar folga real antes de investir em escopo opcional | Gerson | 07/10 | 07/10 | Alta | ✅ Concluída (antecipada para 02/10) |
 | F6-07 | Desenvolver notebook Entrega 2 (YOLO tradicional + CNN do zero + comparação) | Gerson | 01/10 | 05/10 | Crítica | 🔄 Pronta para revisão final |
-| F6-08 | *Escopo opcional 1* — ESP32-CAM/webcam reconhecendo objetos em tempo real | Lucas | 08/10 | 09/10 | Média (opcional) | 🔲 Pendente |
-| F6-09 | *Escopo opcional 2* — Transfer Learning + segmentação | Ryann | 08/10 | 12/10 | Média (opcional) | 🔲 Pendente |
+| F6-08 | *Escopo opcional 1* — ESP32-CAM/webcam reconhecendo objetos em tempo real | Lucas | 08/10 | 09/10 | Média (opcional) | 🔄 Em andamento (pela F6-15) |
+| F6-09 | *Escopo opcional 2* — Transfer Learning + segmentação | Ryann | 08/10 | 12/10 | Média (opcional) | 🔄 Em andamento (pela F6-16) |
 | F6-10 | QA final — testar links, revisar README, congelar commits, submeter | Gerson | 13/10 | 13/10 | Crítica | 🔲 Pendente |
 | F6-11 | Entrega 2 — YOLO tradicional (YOLOv8n com pesos do COCO, sem treino no dataset) aplicado ao teste | Gerson | 01/10 | 01/10 | Crítica | ✅ Concluída |
 | F6-12 | Entrega 2 — CNN treinada do zero para classificar a imagem inteira | Gerson | 01/10 | 02/10 | Crítica | ✅ Concluída |
 | F6-13 | Entrega 2 — Comparação crítica das 3 abordagens (facilidade de uso, precisão, tempo de treino e de inferência) | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
 | F6-14 | Entrega 2 — Notebook executado no Colab + README atualizado | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
 | F6-15 | *Escopo opcional 1* — detecção em tempo real via webcam com o `best.pt` da Entrega 1 (script + README) | Gerson | 02/10 | 09/10 | Média (opcional) | 🔄 Em andamento |
-| F6-16 | *Escopo opcional 2* — CNN do zero × Transfer Learning (MobileNetV2), com e sem segmentação (GrabCut) | Gerson | 03/10 | 12/10 | Média (opcional) | 🔲 Pendente (estrutura inicial pronta) |
+| F6-16 | *Escopo opcional 2* — CNN do zero × Transfer Learning (MobileNetV2), com e sem segmentação (GrabCut) | Gerson | 03/10 | 12/10 | Média (opcional) | 🔄 Em andamento (estrutura inicial pronta) |
 
 > **Subtarefas da Entrega 2:** F6-11 a F6-14 detalham a F6-07 (criadas em 01/10, quando a Entrega 2 começou); a F6-07 fecha após a revisão final do notebook.
 >
@@ -33,7 +33,7 @@
 >
 > **Subtarefa do escopo opcional 2:** a F6-16 detalha a F6-09 e foi antecipada para 03/10; compara 4 combinações (CNN do zero ou MobileNetV2, com ou sem GrabCut) na mesma divisão das Entregas 1 e 2.
 >
-> **Nota sobre datas:** F6-08 e F6-09 rodam em paralelo (responsáveis distintos: Lucas e Ryann) após o checkpoint F6-06, condicionadas à confirmação de que há folga real no cronograma — caso não haja, ambas podem ser descartadas sem penalidade (não valem nota de boletim).
+> **Checkpoint F6-06 (decisão tomada em 02/10):** com as Entregas 1 e 2 já executadas, o checkpoint previsto para 07/10 foi antecipado e decidiu **fazer** os dois escopos opcionais. A execução está nas subtarefas F6-15 (escopo 1 — só falta o vídeo) e F6-16 (escopo 2 — estrutura inicial pronta), com Lucas e Ryann seguindo como responsáveis formais de F6-08 e F6-09. Os escopos opcionais não valem nota de boletim.
 
 ---
 
@@ -61,7 +61,7 @@
 | Dataset pronto | 18/09/2026 | Fim da coleta de imagens |
 | Rotulação concluída | 22/09/2026 | Pronto para treino |
 | Entrega 1 completa | 29/09/2026 | Notebook + vídeo + README parcial |
-| Checkpoint de decisão | 07/10/2026 | Go/no-go para o escopo opcional |
+| Checkpoint de decisão | 07/10/2026 | Go/no-go para o escopo opcional — antecipado: decisão de fazer tomada em 02/10 |
 | Entrega 2 completa | 05/10/2026 | Comparação das 3 abordagens |
 | **Entrega final** | **13/10/2026** | Prazo improrrogável — nenhum commit após esta data |
 
