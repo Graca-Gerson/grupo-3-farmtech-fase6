@@ -17,19 +17,19 @@ A Entrega 2 treinou uma **CNN do zero** para classificar a imagem inteira. Este 
    - **fase 2 (Fine Tuning):** as últimas 20 camadas da base são descongeladas e ajustadas com uma taxa de aprendizado 10 vezes menor.
 2. **Separar o objeto do fundo antes de classificar ajuda?** Para isso, **segmentação com uma rede neural, a U2-Net** (biblioteca `rembg`). Ela cria a máscara do objeto principal da foto sem nenhuma rotulagem manual nova; a máscara apaga o fundo e recorta a imagem no objeto antes de ela entrar na rede de classificação.
 
-## 🧪 Plano de comparação
+## 🧪 Como a comparação foi feita
 
-As duas hipóteses se cruzam em 4 combinações, todas avaliadas nas mesmas 8 imagens de teste:
+As duas hipóteses se cruzaram em 4 combinações, todas avaliadas nas mesmas 8 imagens de teste:
 
 | | **Sem segmentação** | **Com segmentação (U2-Net)** |
 |:--|:--:|:--:|
 | **CNN do zero** | 7/8 — resultado da Entrega 2 (não é treinada de novo) | 6/8 — seção 4 do notebook |
 | **Transfer Learning + Fine Tuning (MobileNetV2)** | 6/8 — seção 5 do notebook | 6/8 — seção 6 do notebook |
 
-Para cada combinação, o notebook vai medir:
+Para cada combinação, o notebook mediu:
 - a **acurácia no teste**;
 - o **tempo de treino** (no Transfer Learning, a soma das duas fases);
-- o **tempo de inferência por imagem**. Nas versões com segmentação, esse tempo inclui a U2-Net, porque ela faz parte do caminho até a resposta.
+- o **tempo de inferência por imagem**. Nas versões com segmentação, esse tempo incluiu a U2-Net, porque ela faz parte do caminho até a resposta.
 
 ## 📊 Resultados
 
@@ -55,7 +55,7 @@ A análise completa está na seção 8 do notebook.
 
 ## 🧠 Escolhas e justificativas
 
-**CNN do zero com segmentação (seção 4):** é a **mesma CNN da Entrega 2** — mesmas camadas, hiperparâmetros e critério de parada (conferido camada a camada) —, só que recebendo as imagens pré-segmentadas pela U2-Net. A hipótese: com só 64 fotos de treino, uma rede que aprende do zero pode se apoiar no fundo (piso, parede, mesa) para separar as classes; apagando o fundo, a expectativa é que ela se concentre no fruto. O efeito contrário também é possível — o recorte muda a escala do fruto e tira o contexto —, e é isso que a comparação vai medir.
+**CNN do zero com segmentação (seção 4):** é a **mesma CNN da Entrega 2** — mesmas camadas, hiperparâmetros e critério de parada (conferido camada a camada) —, só que recebendo as imagens pré-segmentadas pela U2-Net. A hipótese: com só 64 fotos de treino, uma rede que aprende do zero pode se apoiar no fundo (piso, parede, mesa) para separar as classes; apagando o fundo, a expectativa é que ela se concentre no fruto. O efeito contrário também era possível — o recorte muda a escala do fruto e tira o contexto —, e era isso que a comparação precisava medir. Neste dataset, a hipótese não se confirmou: com a segmentação, a CNN do zero acertou 6 de 8, contra 7 de 8 sem ela (ver [Resultados](#-resultados)).
 
 **MobileNetV2:** é leve (cerca de 2,26 milhões de parâmetros na parte convolucional), tem pesos da ImageNet prontos no Keras e aceita entrada de 128×128, o mesmo tamanho da CNN da Entrega 2. Isso mantém a comparação justa.
 
