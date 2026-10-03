@@ -30,8 +30,8 @@
 | 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | ✅ |
 | 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
-| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente |
-| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); vídeo pendente |
+| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente (prazo 06/10) |
+| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); vídeo pendente (prazo 07/10) |
 
 ---
 
@@ -42,7 +42,7 @@
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
 | Repositório GitHub criado | ✅ | Público, `grupo-3-farmtech-fase6` |
-| Planejamento e cronograma | ✅ | 16 tarefas (F6-01 a F6-16), 14 riscos mapeados |
+| Planejamento e cronograma | ✅ | 18 tarefas (F6-01 a F6-18), 14 riscos mapeados |
 | Protocolo de captura de imagens definido | ✅ | Ver [`docs/protocolo_captura_fotos.md`](./docs/protocolo_captura_fotos.md) |
 | Estrutura do Google Drive organizada | ✅ | Ver [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
 | Coleta das 80 imagens | ✅ | 40 tomate + 40 pimentão, divididas em 32/4/4 (treino/validação/teste) por classe |
@@ -50,7 +50,7 @@
 | Treino YOLO (Entrega 1) | ✅ | 2 simulações: 30 e 60 épocas — melhor resultado com 60 épocas (mAP50 = 0,916 na validação); comparação nas seções 4 a 6 do [notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
 | Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
 | Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
-| Vídeo da Entrega 1 | 🔲 | Próxima etapa |
+| Vídeo da Entrega 1 | 🔲 | Prazo: 05/10 |
 | Comparação de abordagens (Entrega 2) | ✅ | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado: YOLO customizada e CNN do zero acertaram 7 de 8 imagens de teste; YOLO tradicional 0 de 8 (não conhece as classes), mas localizou os 8 objetos — tabela na seção 7 e análise crítica na seção 8 |
 | README final + vídeo | 🔲 | Última etapa antes da entrega |
 

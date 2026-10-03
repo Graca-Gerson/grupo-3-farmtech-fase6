@@ -40,4 +40,4 @@ Os riscos ligados aos "Ir Além" (P2-1, P2-3) ficam nos últimos lugares da prio
 
 ## 🔁 Retroativo
 
-*(Seção a ser preenchida durante a execução do projeto, junto da task F6-08 ou equivalente de revisão — mesmo padrão usado nos projetos anteriores do grupo, comparando a priorização inicial com o que de fato se mostrou crítico na prática.)*
+*(Seção a ser preenchida durante a execução do projeto, junto da QA final (F6-10) — mesmo padrão usado nos projetos anteriores do grupo, comparando a priorização inicial com o que de fato se mostrou crítico na prática.)*
