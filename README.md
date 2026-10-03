@@ -31,7 +31,7 @@
 | 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
 | 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente |
-| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔲 |
+| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Estrutura inicial pronta ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); treinos a executar |
 
 ---
 
@@ -42,7 +42,7 @@
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
 | Repositório GitHub criado | ✅ | Público, `grupo-3-farmtech-fase6` |
-| Planejamento e cronograma | ✅ | 15 tarefas (F6-01 a F6-15), 14 riscos mapeados |
+| Planejamento e cronograma | ✅ | 16 tarefas (F6-01 a F6-16), 14 riscos mapeados |
 | Protocolo de captura de imagens definido | ✅ | Ver [`docs/protocolo_captura_fotos.md`](./docs/protocolo_captura_fotos.md) |
 | Estrutura do Google Drive organizada | ✅ | Ver [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
 | Coleta das 80 imagens | ✅ | 40 tomate + 40 pimentão, divididas em 32/4/4 (treino/validação/teste) por classe |
@@ -90,7 +90,8 @@ grupo-3-farmtech-fase6/
 │       ├── cnn_curvas_aprendizado.png
 │       └── cnn_respostas_8_imagens_teste.png
 ├── ir_alem/
-│   └── ir_alem_1_deteccao_tempo_real/  ← Escopo opcional 1: detecção em tempo real via webcam com o best.pt
+│   ├── ir_alem_1_deteccao_tempo_real/  ← Escopo opcional 1: detecção em tempo real via webcam com o best.pt
+│   └── ir_alem_2_transfer_learning/    ← Escopo opcional 2: Transfer Learning (MobileNetV2) e segmentação (GrabCut)
 ├── scripts/
 │   ├── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
 │   └── gerar_diagramas_fase6.py      ← Gera docs/estrutura_drive_fase6.png e docs/raci_fase6.png
@@ -151,7 +152,7 @@ Notebook: [`GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb`](./GersonFe
 ### Escopo Opcional (não vale nota — soma pontos entre Fases 5, 6 e 7)
 
 - **Opção 1:** ESP32-CAM (ou webcam) reconhecendo tomate/pimentão em tempo real, usando o modelo `best.pt` da Entrega 1 — implementada com webcam: [`ir_alem/ir_alem_1_deteccao_tempo_real/`](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)
-- **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação
+- **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação — em andamento com MobileNetV2 e GrabCut: [`ir_alem/ir_alem_2_transfer_learning/`](./ir_alem/ir_alem_2_transfer_learning/README.md)
 
 ---
 

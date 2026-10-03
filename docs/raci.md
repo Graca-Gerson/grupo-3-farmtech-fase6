@@ -55,12 +55,13 @@
 | F6-08 — Escopo opcional 1 | I | A/R | — | — |
 | F6-15 — Escopo opcional 1: detecção via webcam (subtarefa de F6-08) | A/R | C | — | — |
 | F6-09 — Escopo opcional 2 | I | — | — | A/R |
+| F6-16 — Escopo opcional 2: Transfer Learning e segmentação (subtarefa de F6-09) | A/R | — | — | C |
 | F6-10 — QA final e submissão | A/R | — | C | C |
 
 ---
 
 ## Observações
 
-- **Sobrecarga do Gerson:** concentra A/R em 5 das 10 atividades (F6-01, F6-04, F6-06, F6-07, F6-10), incluindo o checkpoint de decisão e a QA final — ambas exigem visão de conjunto do projeto. A F6-07 (Entrega 2) foi assumida por ele em 01/10 e, a partir de 02/10, também a F6-15 (subtarefa opcional do escopo 1, sem impacto em nota). Risco monitorado; se necessário, Carlos ou Ryann podem assumir parte da revisão em F6-10.
+- **Sobrecarga do Gerson:** concentra A/R em 5 das 10 atividades (F6-01, F6-04, F6-06, F6-07, F6-10), incluindo o checkpoint de decisão e a QA final — ambas exigem visão de conjunto do projeto. A F6-07 (Entrega 2) foi assumida por ele em 01/10 e, a partir de 02/10 e 03/10, também as subtarefas opcionais F6-15 (escopo 1) e F6-16 (escopo 2), sem impacto em nota. Risco monitorado; se necessário, Carlos ou Ryann podem assumir parte da revisão em F6-10.
 - **Lucas:** integrante formal do grupo, mantido no RACI por transparência e reconhecimento do trabalho em fases anteriores (Fase 5). Alocado apenas em atividade opcional (sem impacto em nota de boletim), sem dependência no caminho crítico do projeto.
 - Nenhuma atividade obrigatória (Entregas 1 e 2) depende exclusivamente de uma única pessoa sem consulta de pelo menos mais um integrante — reduz risco de bloqueio por ausência pontual.
