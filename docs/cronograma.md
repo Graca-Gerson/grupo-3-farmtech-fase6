@@ -16,8 +16,8 @@
 | F6-04 | Desenvolver notebook Entrega 1 (YOLO customizado, 2 simulações de épocas) | Gerson | 23/09 | 28/09 | Crítica | ✅ Concluída (30/09) |
 | F6-05 | Gravar vídeo Entrega 1 e finalizar README | Ryann | 29/09 | 29/09 | Alta | 🔲 Pendente (prazo previsto vencido) |
 | F6-06 | Checkpoint de decisão — avaliar folga real antes de investir em escopo opcional | Gerson | 07/10 | 07/10 | Alta | ✅ Concluída (antecipada para 02/10) |
-| F6-07 | Desenvolver notebook Entrega 2 (YOLO tradicional + CNN do zero + comparação) | Gerson | 01/10 | 05/10 | Crítica | 🔄 Pronta para revisão final |
-| F6-08 | *Escopo opcional 1* — ESP32-CAM/webcam reconhecendo objetos em tempo real | Lucas | 08/10 | 09/10 | Baixa | 🔄 Em andamento (pela F6-15) |
+| F6-07 | Desenvolver notebook Entrega 2 (YOLO tradicional + CNN do zero + comparação) | Gerson | 01/10 | 05/10 | Crítica | ✅ Concluída (via F6-11 a F6-14) |
+| F6-08 | *Escopo opcional 1* — webcam reconhecendo tomate/pimentão em tempo real com o `best.pt` da Entrega 1 | Lucas | 08/10 | 09/10 | Baixa | 🔄 Em andamento (pela F6-15) |
 | F6-09 | *Escopo opcional 2* — Transfer Learning + segmentação | Ryann | 08/10 | 12/10 | Baixa | 🔄 Em andamento (pela F6-16) |
 | F6-10 | QA final — testar links, revisar README, congelar commits, submeter | Gerson | 13/10 | 13/10 | Crítica | 🔲 Pendente |
 | F6-11 | Entrega 2 — YOLO tradicional (YOLOv8n com pesos do COCO, sem treino no dataset) aplicado ao teste | Gerson | 01/10 | 01/10 | Crítica | ✅ Concluída |
@@ -27,7 +27,7 @@
 | F6-15 | *Escopo opcional 1* — detecção em tempo real via webcam com o `best.pt` da Entrega 1 (script + README) | Gerson | 02/10 | 09/10 | Baixa | 🔄 Em andamento |
 | F6-16 | *Escopo opcional 2* — CNN do zero × Transfer Learning com Fine Tuning (MobileNetV2), com e sem segmentação (U2-Net) | Gerson | 03/10 | 12/10 | Baixa | 🔄 Em andamento (estrutura inicial pronta) |
 
-> **Subtarefas da Entrega 2:** F6-11 a F6-14 detalham a F6-07 (criadas em 01/10, quando a Entrega 2 começou); a F6-07 fecha após a revisão final do notebook.
+> **Subtarefas da Entrega 2:** F6-11 a F6-14 detalham a F6-07 (criadas em 01/10, quando a Entrega 2 começou); com as quatro concluídas e a revisão final do notebook feita, a F6-07 foi concluída.
 >
 > **Subtarefa do escopo opcional 1:** a F6-15 detalha a F6-08 e foi antecipada para 02/10, porque as Entregas 1 e 2 já estavam executadas; usa webcam no lugar da ESP32-CAM, por falta da placa.
 >
@@ -47,8 +47,8 @@
 | E04 | Notebook Entrega 1 (YOLO customizado, 2 simulações) | 28/09 | Gerson |
 | E05 | Vídeo + README da Entrega 1 | 29/09 | Ryann |
 | E06 | Notebook Entrega 2 (comparação de 3 abordagens) | 05/10 | Gerson |
-| E07 | *(condicional)* Escopo opcional 1 — sistema ESP32-CAM/webcam | 09/10 | Lucas |
-| E08 | *(condicional)* Escopo opcional 2 — Transfer Learning + segmentação | 12/10 | Ryann |
+| E07 | Escopo opcional 1 — sistema de detecção em tempo real via webcam | 09/10 | Lucas |
+| E08 | Escopo opcional 2 — Transfer Learning + segmentação | 12/10 | Ryann |
 | E09 | README final consolidado + link do vídeo | 13/10 | Gerson |
 
 ---

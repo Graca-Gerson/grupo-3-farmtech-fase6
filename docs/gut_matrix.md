@@ -34,7 +34,7 @@ Os dois riscos de maior GUT (**P0-3**, GUT 75, e os três empatados em GUT 60) c
 
 O risco de prazo (P0-1, GUT 60) mantém prioridade alta mesmo com Urgência mais baixa (3) porque, embora só se materialize no fim do projeto, a Gravidade é máxima (desclassificação total) — por isso a mitigação (travar commits a partir de 12/10) precisa estar decidida desde já, não in extremis.
 
-Os riscos ligados aos "Ir Além" (P2-1, P2-3) ficam nos últimos lugares da priorização — coerente com a decisão de tratá-los como opcionais, condicionados ao checkpoint de 07/10.
+Os riscos ligados aos "Ir Além" (P2-1, P2-3) ficam nos últimos lugares da priorização — coerente com a decisão de tratá-los como opcionais, condicionados ao checkpoint de decisão — que, antecipado para 02/10 com as Entregas 1 e 2 já executadas, decidiu fazê-los.
 
 ---
 
