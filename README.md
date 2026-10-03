@@ -91,7 +91,7 @@ grupo-3-farmtech-fase6/
 │       └── cnn_respostas_8_imagens_teste.png
 ├── ir_alem/
 │   ├── ir_alem_1_deteccao_tempo_real/  ← Escopo opcional 1: detecção em tempo real via webcam com o best.pt
-│   └── ir_alem_2_transfer_learning/    ← Escopo opcional 2: Transfer Learning (MobileNetV2) e segmentação (GrabCut)
+│   └── ir_alem_2_transfer_learning/    ← Escopo opcional 2: Transfer Learning com Fine Tuning (MobileNetV2) e segmentação (U2-Net)
 ├── scripts/
 │   ├── organizar_dataset_yolo.py     ← Gera a estrutura images/labels do YOLO no Drive (usado pelo notebook)
 │   └── gerar_diagramas_fase6.py      ← Gera docs/estrutura_drive_fase6.png e docs/raci_fase6.png
@@ -152,7 +152,7 @@ Notebook: [`GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb`](./GersonFe
 ### Escopo Opcional (não vale nota — soma pontos entre Fases 5, 6 e 7)
 
 - **Opção 1:** ESP32-CAM (ou webcam) reconhecendo tomate/pimentão em tempo real, usando o modelo `best.pt` da Entrega 1 — implementada com webcam: [`ir_alem/ir_alem_1_deteccao_tempo_real/`](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)
-- **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação — em andamento com MobileNetV2 e GrabCut: [`ir_alem/ir_alem_2_transfer_learning/`](./ir_alem/ir_alem_2_transfer_learning/README.md)
+- **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação — em andamento com MobileNetV2 (Fine Tuning) e segmentação pela rede U2-Net: [`ir_alem/ir_alem_2_transfer_learning/`](./ir_alem/ir_alem_2_transfer_learning/README.md)
 
 ---
 
