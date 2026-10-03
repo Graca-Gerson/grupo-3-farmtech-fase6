@@ -632,7 +632,27 @@ No modo `--sem-janela`, **cada quadro** é salvo em `prints/` — para vídeos l
 - Mensagens de erro claras quando o modelo não é encontrado, quando a câmera não abre e quando ela abre sem entregar imagens.
 - Execução completa com o `best.pt` oficial, usando como fonte um vídeo montado com as 8 imagens de teste da Entrega 1 (sem janela, em CPU): 8 quadros processados, caixas, classe e confiança desenhadas e salvas, cerca de 9 FPS em CPU num Mac.
 - Escolha de câmera testada com hardware real num Mac com duas câmeras (a do próprio Mac e um iPhone pela Câmera de Continuidade): as duas foram encontradas, a lista apareceu com a resolução de cada uma, entradas inválidas foram recusadas sem travar e a câmera escolhida entregou imagem. Os demais casos (uma câmera só, números com lacuna, nenhuma câmera, câmera sem permissão, sem teclado para responder) foram testados por simulação. **No Windows, com duas câmeras reais, ainda não foi testado.**
-- **Ainda não testado ao vivo com tomates e pimentões na frente da câmera** — esse teste e a gravação do vídeo são os próximos passos.
+- **Teste ao vivo em 03/10/2026**, com frutos reais sobre o piso, num Mac (imagem de 1920x1080, cerca de 27 FPS) — resultados abaixo. A gravação do vídeo é o próximo passo.
+
+## 🎥 Teste ao vivo (03/10/2026)
+
+Prints salvos com a tecla `s` durante o teste, sem nenhuma edição:
+
+| Print | O que estava na frente da câmera | Resultado na tela |
+|-------|----------------------------------|-------------------|
+| [`deteccao_20261003_103201_127463.jpg`](./prints/deteccao_20261003_103201_127463.jpg) | Tomate | ✅ `tomate 0.57` |
+| [`deteccao_20261003_103203_868972.jpg`](./prints/deteccao_20261003_103203_868972.jpg) | O mesmo tomate, segundos depois | ✅ `tomate 0.52` |
+| [`deteccao_20261003_103300_875598.jpg`](./prints/deteccao_20261003_103300_875598.jpg) | Pimentão **amarelo** | ⚠️ `nenhuma detecção` |
+| [`deteccao_20261003_103338_663639.jpg`](./prints/deteccao_20261003_103338_663639.jpg) | Pimentão verde e vermelho | ✅ `pimentao 0.54` |
+
+![Tomate reconhecido ao vivo](./prints/deteccao_20261003_103201_127463.jpg)
+
+**O que o teste mostra:**
+
+- O sistema funciona de ponta a ponta com uma câmera de verdade: captura, reconhece e desenha caixa, classe e confiança em tempo real, a cerca de 27 quadros por segundo.
+- Nos três casos reconhecidos, a classe estava **certa**, mas a confiança ficou **baixa** (0,52 a 0,57), logo acima do limiar de 0,5. No teste da Entrega 1, com as fotos do próprio dataset, as confianças dos acertos ficaram entre 0,77 e 0,97. A diferença é esperada: o modelo aprendeu com 64 fotos tiradas de perto, em outro ambiente e com outra câmera; ao vivo mudam o fundo (piso de madeira), a luz, a distância e a câmera.
+- O **pimentão amarelo não foi reconhecido** — nenhuma detecção chegou a 0,5. É um caso fora do que o modelo aprendeu e reforça a principal limitação do projeto: um dataset pequeno não cobre a variedade de cores dos pimentões (o erro do teste da Entrega 1 também foi com um pimentão de cor intermediária, o laranja).
+- Para melhorar, o caminho é ampliar o dataset com mais cores de pimentão e com fotos em ambientes variados — não mexer no limiar de confiança, que só esconderia o problema.
 
 ## ⚠️ Limitações esperadas
 
@@ -648,5 +668,5 @@ ir_alem/ir_alem_1_deteccao_tempo_real/
 ├── README.md                  ← este arquivo
 ├── deteccao_tempo_real.py     ← captura + inferência + prints
 ├── modelo/best.pt             ← (não versionado) copiar do Google Drive
-└── prints/                    ← criada ao salvar o primeiro print (tecla "s")
+└── prints/                    ← prints salvos com a tecla "s" (os do teste ao vivo de 03/10 estão versionados)
 ```
