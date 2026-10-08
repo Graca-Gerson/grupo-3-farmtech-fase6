@@ -146,7 +146,7 @@ O notebook procura a pasta em `/content/drive/MyDrive/FarmTech_Fase6`, ou seja, 
 
 | O que aparece | O que significa | O que fazer |
 |---------------|-----------------|-------------|
-| `FileNotFoundError` ou `No such file or directory` com um caminho começando com `/content/drive/MyDrive/FarmTech_Fase6/...` | Falta o atalho da pasta em Meu Drive, ou a conta que conectou o Drive no Colab não é a que recebeu o compartilhamento | Refaça os itens 1 a 3 do passo 1 (com a conta certa) e execute tudo de novo. Se a conta estava errada: **Ambiente de execução → Desconectar e excluir ambiente de execução** e, ao executar de novo, escolha a conta que recebeu o compartilhamento |
+| `FileNotFoundError` ou `No such file or directory` com um caminho começando com `/content/drive/MyDrive/FarmTech_Fase6/...` (na primeira célula, a mensagem começa com `Pasta do projeto não encontrada`) | Falta o atalho da pasta em Meu Drive, ou a conta que conectou o Drive no Colab não é a que recebeu o compartilhamento | Refaça os itens 1 a 3 do passo 1 (com a conta certa) e execute tudo de novo. Se a conta estava errada: **Ambiente de execução → Desconectar e excluir ambiente de execução** e, ao executar de novo, escolha a conta que recebeu o compartilhamento |
 | `RuntimeError: Problemas no dataset` | Faltam fotos nas pastas do Drive | Leia a lista na mensagem e confira as pastas em [`docs/estrutura_drive.md`](../../docs/estrutura_drive.md) |
 | `GPU disponível: False` | Sem GPU | Refaça o passo 3 e execute tudo de novo |
 | `ModuleNotFoundError: No module named 'rembg'` | A célula de instalação não rodou | Use **Executar tudo** em vez de rodar células soltas |
