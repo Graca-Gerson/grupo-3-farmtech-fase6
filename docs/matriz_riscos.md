@@ -26,7 +26,7 @@
 
 **Legenda de status:** ✅ Fechado (não se materializou ou foi resolvido) · 🟡 Mitigado (efeito reduzido, ainda acompanhado) · 🔲 Aberto (acompanhamento até a entrega).
 
-### Situação atualizada (01/10 a 03/10/2026)
+### Situação atualizada (01/10 a 08/10/2026)
 
 | ID | Situação | Evidência |
 |:--:|:--------:|-----------|
@@ -38,7 +38,7 @@
 | P1-5 | ✅ Fechado | Rotulação concluída no Make Sense IA, sem precisar do plano B |
 | P2-3 | ✅ Fechado | Nomes do Drive padronizados por script (`scripts/organizar_dataset_yolo.py`), documentados em `estrutura_drive.md` |
 | P2-1 | ✅ Fechado | O checkpoint de decisão foi antecipado para 02/10, com as Entregas 1 e 2 já executadas, e decidiu fazer o escopo opcional 2. Os treinos foram executados no Colab e o notebook ficou completo em 03/10 (F6-16 concluída), sem atrasar as Entregas 1 e 2; só falta o vídeo, acompanhado na F6-18 |
-| P2-4 | 🟡 Mitigado | Roteiros de gravação da Entrega 1 (≈4min20s) e do escopo opcional 1 (≈3min50s) definidos, cronometrados e validados. Fecha quando os vídeos publicados (F6-05, F6-17 e F6-18) tiverem até 5 minutos |
+| P2-4 | 🟡 Mitigado | Roteiros de gravação da Entrega 1 (≈4min20s) e do escopo opcional 1 (≈3min50s) definidos, cronometrados e validados. A gravação dos três vídeos (F6-05, F6-17 e F6-18) foi reagendada para 09/10. Fecha quando os vídeos publicados tiverem até 5 minutos |
 | P3-2 | 🟡 Mitigado | Verificações automáticas antes do treino: a célula 2.2 da Entrega 1 e a célula 2.0 da Entrega 2 conferem contagens, rótulos e classes e interrompem a execução com erro se algo faltar |
 
 ---

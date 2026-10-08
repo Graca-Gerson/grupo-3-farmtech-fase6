@@ -13,7 +13,7 @@ A pasta `FarmTech_Fase6` fica no **Meu Drive** do Gerson e é compartilhada com 
 ```
 
 - **Para o dono da pasta:** funciona direto.
-- **Para os demais membros:** a pasta aparece em "Compartilhados comigo", que o Colab não enxerga em `MyDrive`. Faça uma única vez: no Google Drive, clique com o botão direito em `FarmTech_Fase6` → **Organizar** → **Adicionar atalho** → **Meu Drive**. Com o atalho na raiz do Meu Drive, o mesmo caminho acima passa a funcionar.
+- **Para os demais membros:** a pasta aparece em "Compartilhados comigo", que o Colab não enxerga em `MyDrive`. Faça uma única vez: no Google Drive, clique com o botão direito em `FarmTech_Fase6` → **Organizar** → **Adicionar atalho** → **Meu Drive**. Com o atalho na raiz do Meu Drive, o mesmo caminho acima passa a funcionar. O passo a passo completo (conta certa, permissão de Editor e conferência do nome) está no passo 1 de [Como Executar no README principal](../README.md#2-rodar-um-notebook-no-google-colab-passo-a-passo).
 
 ## Estrutura
 

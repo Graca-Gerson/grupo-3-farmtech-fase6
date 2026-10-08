@@ -30,8 +30,8 @@
 | 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | ✅ |
 | 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
 | 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
-| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente (prazo 06/10) |
-| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); vídeo pendente (prazo 07/10) |
+| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente (prazo 09/10) |
+| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); vídeo pendente (prazo 09/10) |
 
 ---
 
@@ -50,7 +50,7 @@
 | Treino YOLO (Entrega 1) | ✅ | 2 simulações: 30 e 60 épocas — melhor resultado com 60 épocas (mAP50 = 0,916 na validação); comparação nas seções 4 a 6 do [notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
 | Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
 | Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
-| Vídeo da Entrega 1 | 🔲 | Prazo: 05/10 |
+| Vídeo da Entrega 1 | 🔲 | Prazo: 09/10 |
 | Comparação de abordagens (Entrega 2) | ✅ | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado: YOLO customizada e CNN do zero acertaram 7 de 8 imagens de teste; YOLO tradicional 0 de 8 (não conhece as classes), mas localizou os 8 objetos — tabela na seção 7 e análise crítica na seção 8 |
 | README final + vídeo | 🔲 | Última etapa antes da entrega |
 
@@ -175,14 +175,16 @@ Os notebooks estão na raiz deste repositório:
 
 Os passos valem para os dois notebooks. O passo 1 é feito **uma única vez**; os demais, a cada execução.
 
-**Passo 1 — Criar o atalho da pasta do projeto no seu Google Drive (só na primeira vez).**
-A pasta `FarmTech_Fase6` fica no Drive de um integrante e foi compartilhada com você. O Colab só enxerga o que está em **Meu Drive**, por isso é preciso criar um atalho lá:
+**Passo 1 — Para quem NÃO é o dono da pasta: colocar a pasta do projeto no seu Meu Drive (só na primeira vez).**
+A pasta `FarmTech_Fase6` fica no Google Drive de um integrante (o dono) e é compartilhada com o grupo. Os notebooks procuram a pasta em `/content/drive/MyDrive/FarmTech_Fase6`, ou seja, dentro do **Meu Drive de quem executa**. Uma pasta compartilhada **não** aparece no seu Meu Drive sozinha: é preciso criar um atalho para ela. Quem é o dono da pasta já a vê em Meu Drive e pode pular este passo.
 
-1. Abra [drive.google.com](https://drive.google.com) e clique em **Compartilhados comigo**, no menu da esquerda.
-2. Clique com o botão direito em **`FarmTech_Fase6`** → **Organizar** → **Adicionar atalho**.
-3. Escolha **Meu Drive** e clique em **Adicionar**.
+1. **Receber o compartilhamento na conta certa.** Use no Colab a **mesma conta Google** que recebeu o compartilhamento da pasta `FarmTech_Fase6`. Se ainda não recebeu, peça ao dono da pasta que a compartilhe com esse e-mail, com permissão de **Editor** (os notebooks gravam resultados na pasta, então só leitura não basta).
+   **Deu certo se:** ao abrir [drive.google.com](https://drive.google.com) com essa conta e clicar em **Compartilhados comigo**, no menu da esquerda, a pasta `FarmTech_Fase6` aparece na lista.
+2. **Criar o atalho em Meu Drive.** Ainda em **Compartilhados comigo**, clique com o botão direito em **`FarmTech_Fase6`** → **Organizar** → **Adicionar atalho** → escolha **Meu Drive** → clique em **Adicionar**.
+3. **Conferir o nome.** Clique em **Meu Drive**, no menu da esquerda.
+   **Deu certo se:** aparece `FarmTech_Fase6` com uma pequena seta no ícone (o símbolo de atalho) e com o nome **exatamente** `FarmTech_Fase6` — mesmas maiúsculas, com sublinhado, sem espaço e sem "(1)" no fim. Se o nome estiver diferente, clique com o botão direito no atalho → **Renomear** e corrija. Se já existir em Meu Drive **outra** `FarmTech_Fase6` **sem** a seta (uma pasta comum, criada por uma execução anterior sem o atalho), renomeie essa outra (por exemplo, para `FarmTech_Fase6_antiga`) antes de rodar o notebook — o Colab não sabe qual das duas usar.
 
-**Deu certo se:** ao clicar em **Meu Drive**, aparece `FarmTech_Fase6` com uma pequena seta no ícone (o símbolo de atalho). Quem é dono da pasta já a vê em Meu Drive e pode pular este passo. A organização da pasta está descrita em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
+**Resultado esperado deste passo:** quando você rodar o notebook (passo 5), a primeira célula mostra `Mounted at /content/drive`, e o caminho `/content/drive/MyDrive/FarmTech_Fase6` existe — a célula 2.0 lista as fotos sem erro. A organização da pasta está descrita em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
 
 **Passo 2 — Abrir o notebook no Colab, direto do GitHub.**
 
@@ -223,7 +225,7 @@ A versão do repositório guarda os resultados oficiais documentados. Não use *
 
 | O que aparece | O que significa | O que fazer |
 |---------------|-----------------|-------------|
-| Erro em vermelho com `FileNotFoundError` e `/content/drive/MyDrive/FarmTech_Fase6` | O Colab não encontrou a pasta do projeto no seu Drive | Faça o passo 1 (atalho em Meu Drive) e execute tudo de novo (passo 5) |
+| Erro em vermelho com `FileNotFoundError` ou `No such file or directory` e um caminho começando com `/content/drive/MyDrive/FarmTech_Fase6/...` | Falta o atalho da pasta em Meu Drive, ou a conta que conectou o Drive no Colab não é a que recebeu o compartilhamento | Refaça os itens 1 a 3 do passo 1 (com a conta certa) e execute tudo de novo (passo 5). Se a conta estava errada: **Ambiente de execução → Desconectar e excluir ambiente de execução** e, ao executar de novo, escolha a conta que recebeu o compartilhamento |
 | `RuntimeError` dizendo que a estrutura do dataset tem problemas | Faltam fotos ou rótulos nas pastas do Drive | Leia a lista de problemas na própria mensagem e confira as pastas com [`docs/estrutura_drive.md`](./docs/estrutura_drive.md) |
 | `GPU disponível: False` | O notebook está rodando sem a GPU | Refaça o passo 3 e execute tudo de novo |
 | A primeira célula fica parada pedindo autorização | O pedido de acesso ao Drive não foi aceito | Clique em **Conectar ao Google Drive** e permita o acesso com a conta que tem a pasta do projeto |

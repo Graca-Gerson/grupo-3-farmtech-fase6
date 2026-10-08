@@ -101,12 +101,16 @@ O notebook roda no **Google Colab**, um serviço do Google que executa o código
 - uma **conta Google** com acesso à pasta `FarmTech_Fase6` no Google Drive (compartilhada com o grupo);
 - um **navegador**.
 
-**Passo 1 — Criar o atalho da pasta do projeto no seu Google Drive (só na primeira vez).**
+**Passo 1 — Para quem NÃO é o dono da pasta: colocar a pasta do projeto no seu Meu Drive (só na primeira vez).**
+O notebook procura a pasta em `/content/drive/MyDrive/FarmTech_Fase6`, ou seja, dentro do **Meu Drive de quem executa**. Uma pasta compartilhada **não** aparece no seu Meu Drive sozinha: é preciso criar um atalho para ela. Quem é o dono da pasta já a vê em Meu Drive e pode pular este passo.
 
-1. Abra [drive.google.com](https://drive.google.com) e clique em **Compartilhados comigo**.
-2. Clique com o botão direito em **`FarmTech_Fase6`** → **Organizar** → **Adicionar atalho** → **Meu Drive** → **Adicionar**.
+1. **Receber o compartilhamento na conta certa.** Use no Colab a **mesma conta Google** que recebeu o compartilhamento da pasta `FarmTech_Fase6`. Se ainda não recebeu, peça ao dono da pasta que a compartilhe com esse e-mail, com permissão de **Editor** (o notebook grava resultados na pasta, então só leitura não basta).
+   **Deu certo se:** ao abrir [drive.google.com](https://drive.google.com) com essa conta e clicar em **Compartilhados comigo**, no menu da esquerda, a pasta `FarmTech_Fase6` aparece na lista.
+2. **Criar o atalho em Meu Drive.** Ainda em **Compartilhados comigo**, clique com o botão direito em **`FarmTech_Fase6`** → **Organizar** → **Adicionar atalho** → escolha **Meu Drive** → clique em **Adicionar**.
+3. **Conferir o nome.** Clique em **Meu Drive**, no menu da esquerda.
+   **Deu certo se:** aparece `FarmTech_Fase6` com uma pequena seta no ícone (o símbolo de atalho) e com o nome **exatamente** `FarmTech_Fase6` — mesmas maiúsculas, com sublinhado, sem espaço e sem "(1)" no fim. Se o nome estiver diferente, clique com o botão direito no atalho → **Renomear** e corrija. Se já existir em Meu Drive **outra** `FarmTech_Fase6` **sem** a seta (uma pasta comum, criada por uma execução anterior sem o atalho), renomeie essa outra (por exemplo, para `FarmTech_Fase6_antiga`) antes de rodar o notebook — o Colab não sabe qual das duas usar.
 
-**Deu certo se:** em **Meu Drive** aparece `FarmTech_Fase6` com uma pequena seta no ícone. Quem é dono da pasta já a vê ali e pode pular este passo.
+**Resultado esperado deste passo:** quando você rodar o notebook (passo 5), a primeira célula mostra `Mounted at /content/drive`, e o caminho `/content/drive/MyDrive/FarmTech_Fase6` existe — a célula 2.0 lista as imagens sem erro.
 
 **Passo 2 — Abrir o notebook no Colab, direto do GitHub.**
 
@@ -142,7 +146,7 @@ O notebook roda no **Google Colab**, um serviço do Google que executa o código
 
 | O que aparece | O que significa | O que fazer |
 |---------------|-----------------|-------------|
-| `FileNotFoundError` com `/content/drive/MyDrive/FarmTech_Fase6` | O Colab não achou a pasta do projeto | Faça o passo 1 e execute tudo de novo |
+| `FileNotFoundError` ou `No such file or directory` com um caminho começando com `/content/drive/MyDrive/FarmTech_Fase6/...` | Falta o atalho da pasta em Meu Drive, ou a conta que conectou o Drive no Colab não é a que recebeu o compartilhamento | Refaça os itens 1 a 3 do passo 1 (com a conta certa) e execute tudo de novo. Se a conta estava errada: **Ambiente de execução → Desconectar e excluir ambiente de execução** e, ao executar de novo, escolha a conta que recebeu o compartilhamento |
 | `RuntimeError: Problemas no dataset` | Faltam fotos nas pastas do Drive | Leia a lista na mensagem e confira as pastas em [`docs/estrutura_drive.md`](../../docs/estrutura_drive.md) |
 | `GPU disponível: False` | Sem GPU | Refaça o passo 3 e execute tudo de novo |
 | `ModuleNotFoundError: No module named 'rembg'` | A célula de instalação não rodou | Use **Executar tudo** em vez de rodar células soltas |
