@@ -64,7 +64,9 @@ grupo-3-farmtech-fase6/
 ├── GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb   ← Notebook da Entrega 2 (comparação de abordagens)
 ├── docs/
 │   ├── protocolo_captura_fotos.md    ← Regras de captura das imagens do dataset
+│   ├── protocolo_captura_fase6.png
 │   ├── estrutura_drive.md            ← Organização de pastas no Google Drive
+│   ├── estrutura_drive_fase6.png
 │   ├── macroprocesso.md              ← Fluxo de gestão do projeto (planejamento → entrega)
 │   ├── macroprocesso_fase6.png
 │   ├── cronograma.md                 ← Cronograma detalhado + jornada visual

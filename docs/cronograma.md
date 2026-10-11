@@ -4,6 +4,8 @@
 
 ![Jornada do Projeto](./cronograma_fase6.png)
 
+> A imagem mostra a jornada planejada no início do projeto (15/09); as datas e o status reais estão nas tabelas abaixo.
+
 ---
 
 ## Tarefas
@@ -76,4 +78,4 @@
 ## Observações
 
 - Cronograma respeita apenas dias úteis (segunda a sexta) — fins de semana ficam como folga estratégica.
-- Equipe efetiva de 3 membros (Gerson, Carlos, Ryann) para o caminho crítico — Lucas participa formalmente da equipe, alocado apenas em F6-08 (tarefa opcional, sem carga em nenhuma task obrigatória), por questão pessoal registrada.
+- Equipe efetiva de 3 membros (Gerson, Carlos, Ryann) no caminho crítico; Lucas, integrante formal, é o responsável formal do escopo opcional 1 (F6-08), sem tarefas no caminho crítico.

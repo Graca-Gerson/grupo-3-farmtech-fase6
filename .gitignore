@@ -20,6 +20,10 @@ runs/
 *.pem
 *.key
 credentials*.json
+!.env.example
+
+# Arquivos temporários do Office
+~$*
 
 # Overlays de gravação do vídeo (assets do OBS, não são entregáveis do projeto)
 apresentacao/

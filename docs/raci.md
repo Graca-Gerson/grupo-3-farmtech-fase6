@@ -24,7 +24,7 @@
 | Sigla | Nome | RM | Papel |
 |:-----:|------|:--:|-------|
 | GER | Gerson Ferreira da Graça | 569624 | Liderança técnica, arquitetura, QA final |
-| LUC | Lucas Braga | 568712 | Integrante formal — capacidade reduzida (questão pessoal), sem carga no caminho crítico |
+| LUC | Lucas Braga | 568712 | Integrante formal — responsável formal do escopo opcional, sem carga no caminho crítico |
 | CAR | Carlos Leonardo Mazieri | 572809 | Coleta e organização do dataset |
 | RYA | Ryann Pinto | 571003 | Documentação, rotulação, apresentação |
 
