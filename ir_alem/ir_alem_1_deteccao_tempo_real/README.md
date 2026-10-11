@@ -2,7 +2,7 @@
 
 > **FIAP — Fase 6 · Escopo opcional 1** · Reconhecimento em tempo real usando o modelo `best.pt` da Entrega 1
 
-> 🎬 **Vídeo de demonstração:** [youtu.be/vaLZAQWHWXQ](https://youtu.be/vaLZAQWHWXQ) (YouTube, não listado, 2min56s)
+> 🎬 **Vídeo de demonstração:** [youtu.be/vaLZAQWHWXQ](https://youtu.be/vaLZAQWHWXQ)
 
 ## 🎯 Objetivo
 

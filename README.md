@@ -50,7 +50,7 @@
 | Treino YOLO (Entrega 1) | ✅ | 2 simulações: 30 e 60 épocas — melhor resultado com 60 épocas (mAP50 = 0,916 na validação); comparação nas seções 4 a 6 do [notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
 | Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
 | Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
-| Vídeo da Entrega 1 | ✅ | [youtu.be/rjt7mbAwg50](https://youtu.be/rjt7mbAwg50) — YouTube, não listado, 4min50s |
+| Vídeo da Entrega 1 | ✅ | [youtu.be/rjt7mbAwg50](https://youtu.be/rjt7mbAwg50) |
 | Comparação de abordagens (Entrega 2) | ✅ | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado: YOLO customizada e CNN do zero acertaram 7 de 8 imagens de teste; YOLO tradicional 0 de 8 (não conhece as classes), mas localizou os 8 objetos — tabela na seção 7 e análise crítica na seção 8 |
 | README final + vídeos | ✅ | Links dos 3 vídeos (Entrega 1 e escopos opcionais 1 e 2) em [Links Rápidos](#-links-rápidos) |
 
@@ -286,7 +286,7 @@ Este comando abre o notebook no navegador (o Jupyter é o "Colab" local). **Deu 
 | Recurso | Link |
 |:--------|:-----|
 | 🌐 **Repositório GitHub** | [Graca-Gerson/grupo-3-farmtech-fase6](https://github.com/Graca-Gerson/grupo-3-farmtech-fase6) — Público |
-| 🎬 **Vídeo Demonstrativo (Entrega 1)** | [youtu.be/rjt7mbAwg50](https://youtu.be/rjt7mbAwg50) — YouTube, não listado |
+| 🎬 **Vídeo Demonstrativo (Entrega 1)** | [youtu.be/rjt7mbAwg50](https://youtu.be/rjt7mbAwg50) |
 | 🎬 Vídeo do Escopo Opcional 1 (detecção em tempo real com webcam) | [youtu.be/vaLZAQWHWXQ](https://youtu.be/vaLZAQWHWXQ) |
 | 🎬 Vídeo do Escopo Opcional 2 (Transfer Learning, Fine Tuning e Segmentação) | [youtu.be/trNwPsZzUZ4](https://youtu.be/trNwPsZzUZ4) |
 | 📓 Notebook Principal (Entrega 1) | [GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |

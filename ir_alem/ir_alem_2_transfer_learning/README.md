@@ -2,7 +2,7 @@
 
 > **FIAP — Fase 6 · Escopo opcional 2** · Classificação de tomate e pimentão com uma rede pré-treinada com Fine Tuning (MobileNetV2) e com pré-segmentação por uma rede neural (U2-Net)
 
-> 🎬 **Vídeo de demonstração:** [youtu.be/trNwPsZzUZ4](https://youtu.be/trNwPsZzUZ4) (YouTube, não listado, 3min33s)
+> 🎬 **Vídeo de demonstração:** [youtu.be/trNwPsZzUZ4](https://youtu.be/trNwPsZzUZ4)
 
 > ✅ **Situação:** concluído — notebook executado no Google Colab com GPU, com as 4 combinações treinadas e avaliadas, a tabela comparativa (seção 7), as conclusões (seção 8) e o vídeo de demonstração publicado.
 
