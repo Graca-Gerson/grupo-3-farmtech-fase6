@@ -14,5 +14,12 @@ runs/
 # OS
 .DS_Store
 
+# Variáveis de ambiente e credenciais (nunca versionar)
+.env
+.env.*
+*.pem
+*.key
+credentials*.json
+
 # Overlays de gravação do vídeo (assets do OBS, não são entregáveis do projeto)
 apresentacao/

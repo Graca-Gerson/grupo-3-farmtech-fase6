@@ -99,7 +99,7 @@ grupo-3-farmtech-fase6/
 └── README.md
 ```
 
-> 📁 **Dataset e resultados de treino** ficam no Google Drive (fora do repositório, por tamanho) — estrutura completa documentada em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md).
+> 📁 **Dataset e resultados de treino** ficam no Google Drive (fora do repositório, por tamanho) — estrutura completa documentada em [`docs/estrutura_drive.md`](./docs/estrutura_drive.md). O acesso a essa pasta é dos integrantes do grupo. Para conferir os resultados sem ele, os notebooks estão salvos com as saídas da execução oficial e os prints ficam versionados em [`prints_teste/`](./prints_teste/) e nas pastas dos escopos opcionais.
 
 ---
 

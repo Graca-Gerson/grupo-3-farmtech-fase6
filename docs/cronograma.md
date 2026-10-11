@@ -19,7 +19,7 @@
 | F6-07 | Desenvolver notebook Entrega 2 (YOLO tradicional + CNN do zero + comparação) | Gerson | 01/10 | 05/10 | Crítica | ✅ Concluída (via F6-11 a F6-14) |
 | F6-08 | *Escopo opcional 1* — webcam reconhecendo tomate/pimentão em tempo real com o `best.pt` da Entrega 1 | Lucas | 08/10 | 09/10 | Baixa | ✅ Concluída (via F6-15) |
 | F6-09 | *Escopo opcional 2* — Transfer Learning + segmentação | Ryann | 08/10 | 12/10 | Baixa | ✅ Concluída (via F6-16) |
-| F6-10 | QA final — testar links, revisar README, congelar commits, submeter | Gerson | 13/10 | 13/10 | Crítica | 🔲 Pendente |
+| F6-10 | QA final — testar links, revisar README, congelar commits, submeter | Gerson | 13/10 | 13/10 | Crítica | 🔄 Em andamento |
 | F6-11 | Entrega 2 — YOLO tradicional (YOLOv8n com pesos do COCO, sem treino no dataset) aplicado ao teste | Gerson | 01/10 | 01/10 | Crítica | ✅ Concluída |
 | F6-12 | Entrega 2 — CNN treinada do zero para classificar a imagem inteira | Gerson | 01/10 | 02/10 | Crítica | ✅ Concluída |
 | F6-13 | Entrega 2 — Comparação crítica das 3 abordagens (facilidade de uso, precisão, tempo de treino e de inferência) | Gerson | 02/10 | 05/10 | Crítica | ✅ Concluída |
