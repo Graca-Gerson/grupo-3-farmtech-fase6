@@ -634,6 +634,7 @@ No modo `--sem-janela`, **cada quadro** é salvo em `prints/` — para vídeos l
 - Mensagens de erro claras quando o modelo não é encontrado, quando a câmera não abre e quando ela abre sem entregar imagens.
 - Execução completa com o `best.pt` oficial, usando como fonte um vídeo montado com as 8 imagens de teste da Entrega 1 (sem janela, em CPU): 8 quadros processados, caixas, classe e confiança desenhadas e salvas, cerca de 9 FPS em CPU num Mac.
 - Escolha de câmera testada com hardware real num Mac com duas câmeras (a do próprio Mac e um iPhone pela Câmera de Continuidade): as duas foram encontradas, a lista apareceu com a resolução de cada uma, entradas inválidas foram recusadas sem travar e a câmera escolhida entregou imagem. Os demais casos (uma câmera só, números com lacuna, nenhuma câmera, câmera sem permissão, sem teclado para responder) foram testados por simulação. **No Windows, com duas câmeras reais, ainda não foi testado.**
+- A receita do Windows segue os mesmos passos da receita do macOS, que foi executada literalmente; a do Windows foi revisada, mas não executada num computador Windows real.
 - **Teste ao vivo em 11/10/2026**, o mesmo do [vídeo de demonstração](https://youtu.be/vaLZAQWHWXQ), com frutos reais sobre uma superfície branca, num Mac (imagem de 1920x1080, de 16 a 21 FPS) — resultados abaixo.
 
 ## 🎥 Teste ao vivo (11/10/2026)

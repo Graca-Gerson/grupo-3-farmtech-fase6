@@ -1,6 +1,6 @@
 # 📅 Cronograma — FarmTech Vision (Fase 6)
 
-> **FIAP Challenge — Fase 6** · Período: 15/09/2026 – 13/10/2026 (21 dias úteis)
+> **FIAP Challenge — Fase 6** · Período: 15/09/2026 – 13/10/2026 (20 dias úteis — 12/10 é feriado nacional)
 
 ![Jornada do Projeto](./cronograma_fase6.png)
 
@@ -77,5 +77,5 @@
 
 ## Observações
 
-- Cronograma respeita apenas dias úteis (segunda a sexta) — fins de semana ficam como folga estratégica.
+- Cronograma respeita apenas dias úteis (segunda a sexta, exceto feriados) — fins de semana ficam como folga estratégica.
 - Equipe efetiva de 3 membros (Gerson, Carlos, Ryann) no caminho crítico; Lucas, integrante formal, é o responsável formal do escopo opcional 1 (F6-08), sem tarefas no caminho crítico.

@@ -17,7 +17,7 @@
 | **Material** | Dataset de apenas 80 imagens (mínimo exigido) — pouca margem para erro de captura ou rotulação incorreta | P0-3 | Carlos |
 | **Material** | Dependência de uma única ferramenta externa (Make Sense IA) para rotulação, sem plano B pronto | P1-5 | Carlos |
 | **Material** | Coleta das imagens é etapa manual, sujeita a atraso por disponibilidade dos membros | P1-1 | Carlos |
-| **Mão de obra** | Equipe efetivamente reduzida a 3 membros (3 membros no caminho crítico) frente ao escopo total (2 entregas + 2 itens opcionais) | P1-2 | Gerson |
+| **Mão de obra** | Equipe efetiva de 3 membros no caminho crítico frente ao escopo total (2 entregas + 2 itens opcionais) | P1-2 | Gerson |
 | **Medida** | Sem testes de sanidade automatizados (shapes, tipos de dado) no notebook — erros só aparecem tarde | P3-2 | Carlos |
 | **Medida** | Falta de convenção de nomenclatura definida desde o início (arquivos, pastas no Drive) | P2-3 | Ryann |
 | **Meio externo** | Regra de prazo rígida da FIAP — qualquer commit após 13/10 desclassifica a entrega inteira | P0-1 | Gerson |
