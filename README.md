@@ -28,16 +28,16 @@
 | 2 | Rotular imagens de treino | ✅ |
 | 3 | Treinar YOLO customizado com 2 configurações de épocas (30 e 60) | ✅ |
 | 4 | Comparar YOLO customizado × YOLO tradicional × CNN treinada do zero | ✅ |
-| 5 | Documentar achados, conclusões e limitações (notebook + README) | 🔄 Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
-| 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | 🔲 |
-| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | 🔄 Funcionando com webcam e testado ao vivo em 03/10 ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); vídeo pendente (prazo 09/10) |
-| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | 🔄 Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); vídeo pendente (prazo 09/10) |
+| 5 | Documentar achados, conclusões e limitações (notebook + README) | ✅ Entregas 1 e 2 documentadas nos notebooks (seção 8 de cada) |
+| 6 | Gravar vídeo demonstrativo (até 5min, YouTube não listado) | ✅ [Vídeo da Entrega 1](https://youtu.be/rjt7mbAwg50) |
+| 7 | *(Escopo opcional)* Sistema de coleta em tempo real via ESP32-CAM/webcam | ✅ Funcionando com webcam e testado ao vivo ([Ir Além 1](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)); [vídeo](https://youtu.be/vaLZAQWHWXQ) |
+| 8 | *(Escopo opcional)* Transfer Learning + segmentação de imagem | ✅ Notebook completo e executado ([Ir Além 2](./ir_alem/ir_alem_2_transfer_learning/README.md)); [vídeo](https://youtu.be/trNwPsZzUZ4) |
 
 ---
 
 ## ✅ Status do Projeto
 
-> 🔄 **Entregas 1 e 2 concluídas nos notebooks** — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Entrega 2: [notebook de comparação](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado no Colab, com as três abordagens medidas nas mesmas 8 imagens de teste e a análise crítica na seção 8.
+> ✅ **Entregas 1 e 2 concluídas** (notebooks executados e vídeo publicado) — dataset coletado e rotulado, YOLO customizado treinado em 2 simulações (30 e 60 épocas), comparação, teste e conclusões documentados. Entrega 2: [notebook de comparação](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado no Colab, com as três abordagens medidas nas mesmas 8 imagens de teste e a análise crítica na seção 8.
 
 | Etapa | Status | Observação |
 |:------|:------:|:-----------|
@@ -50,9 +50,9 @@
 | Treino YOLO (Entrega 1) | ✅ | 2 simulações: 30 e 60 épocas — melhor resultado com 60 épocas (mAP50 = 0,916 na validação); comparação nas seções 4 a 6 do [notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
 | Teste em imagens nunca vistas | ✅ | 7 de 8 imagens corretas — seção 7 do notebook e prints em [`prints_teste/`](./prints_teste/) |
 | Conclusões da Entrega 1 | ✅ | Pontos fortes, limitações e aprendizados na seção 8 do notebook |
-| Vídeo da Entrega 1 | 🔲 | Prazo: 09/10 |
+| Vídeo da Entrega 1 | ✅ | [youtu.be/rjt7mbAwg50](https://youtu.be/rjt7mbAwg50) — YouTube, não listado, 4min50s |
 | Comparação de abordagens (Entrega 2) | ✅ | [Notebook](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) executado: YOLO customizada e CNN do zero acertaram 7 de 8 imagens de teste; YOLO tradicional 0 de 8 (não conhece as classes), mas localizou os 8 objetos — tabela na seção 7 e análise crítica na seção 8 |
-| README final + vídeo | 🔲 | Última etapa antes da entrega |
+| README final + vídeos | ✅ | Links dos 3 vídeos (Entrega 1 e escopos opcionais 1 e 2) em [Links Rápidos](#-links-rápidos) |
 
 ---
 
@@ -152,7 +152,7 @@ Notebook: [`GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb`](./GersonFe
 ### Escopo Opcional (não vale nota — soma pontos entre Fases 5, 6 e 7)
 
 - **Opção 1:** ESP32-CAM (ou webcam) reconhecendo tomate/pimentão em tempo real, usando o modelo `best.pt` da Entrega 1 — implementada com webcam: [`ir_alem/ir_alem_1_deteccao_tempo_real/`](./ir_alem/ir_alem_1_deteccao_tempo_real/README.md)
-- **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação — em andamento com MobileNetV2 (Fine Tuning) e segmentação pela rede U2-Net: [`ir_alem/ir_alem_2_transfer_learning/`](./ir_alem/ir_alem_2_transfer_learning/README.md)
+- **Opção 2:** Transfer Learning + Fine Tuning (VGG/Inception/MobileNet) + segmentação de imagem antes da classificação — implementada com MobileNetV2 (Fine Tuning) e segmentação pela rede U2-Net: [`ir_alem/ir_alem_2_transfer_learning/`](./ir_alem/ir_alem_2_transfer_learning/README.md)
 
 ---
 
@@ -286,7 +286,9 @@ Este comando abre o notebook no navegador (o Jupyter é o "Colab" local). **Deu 
 | Recurso | Link |
 |:--------|:-----|
 | 🌐 **Repositório GitHub** | [Graca-Gerson/grupo-3-farmtech-fase6](https://github.com/Graca-Gerson/grupo-3-farmtech-fase6) — Público |
-| 🎬 **Vídeo Demonstrativo** | *(Entrega 1 — a publicar)* |
+| 🎬 **Vídeo Demonstrativo (Entrega 1)** | [youtu.be/rjt7mbAwg50](https://youtu.be/rjt7mbAwg50) — YouTube, não listado |
+| 🎬 Vídeo do Escopo Opcional 1 (detecção em tempo real com webcam) | [youtu.be/vaLZAQWHWXQ](https://youtu.be/vaLZAQWHWXQ) |
+| 🎬 Vídeo do Escopo Opcional 2 (Transfer Learning, Fine Tuning e Segmentação) | [youtu.be/trNwPsZzUZ4](https://youtu.be/trNwPsZzUZ4) |
 | 📓 Notebook Principal (Entrega 1) | [GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6.ipynb) |
 | 📓 Notebook da Entrega 2 | [GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb](./GersonFerreiraDaGraca_rm569624_pbl_fase6_entrega2.ipynb) |
 | 📸 Protocolo de Captura de Imagens | [docs/protocolo_captura_fotos.md](./docs/protocolo_captura_fotos.md) |

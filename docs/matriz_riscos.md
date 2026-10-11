@@ -20,13 +20,13 @@
 | P2-1 | Complexidade do escopo opcional 2 sem tempo real disponível | Médio | Média | P2 | Só iniciar após checkpoint de 07/10 confirmar folga | Gerson | ✅ Fechado |
 | P2-2 | Links quebrados no README (notebook/vídeo) | Médio | Média | P2 | Testar manualmente cada link antes da entrega final | Ryann | 🔲 Aberto |
 | P2-3 | Falta de padronização de nomenclatura (Drive/repo) | Médio | Média | P2 | Convenção de nomes definida já na semana 1 | Ryann | ✅ Fechado |
-| P2-4 | Vídeo pode exceder o limite de 5 minutos | Médio | Média | P2 | Roteiro e duração-alvo definidos antes da gravação | Ryann | 🟡 Mitigado |
+| P2-4 | Vídeo pode exceder o limite de 5 minutos | Médio | Média | P2 | Roteiro e duração-alvo definidos antes da gravação | Ryann | ✅ Fechado |
 | P3-1 | Ausência de changelog de decisões técnicas | Baixo | Baixa | P3 | Manter `DECISIONS.md` com registro breve por marco | Gerson | 🔲 Aberto |
 | P3-2 | Ausência de testes de sanidade no notebook | Baixo | Baixa | P3 | Células de assert básicas antes de blocos de treino | Carlos | 🟡 Mitigado |
 
 **Legenda de status:** ✅ Fechado (não se materializou ou foi resolvido) · 🟡 Mitigado (efeito reduzido, ainda acompanhado) · 🔲 Aberto (acompanhamento até a entrega).
 
-### Situação atualizada (01/10 a 08/10/2026)
+### Situação atualizada (01/10 a 11/10/2026)
 
 | ID | Situação | Evidência |
 |:--:|:--------:|-----------|
@@ -37,8 +37,8 @@
 | P1-4 | 🟡 Mitigado | Métricas nos 3 conjuntos: treino e validação nas duas entregas e, na Entrega 2, mAP no teste da YOLO customizada (mAP50 = 0,970). Segue mitigado, não fechado: o teste tem só 8 imagens |
 | P1-5 | ✅ Fechado | Rotulação concluída no Make Sense IA, sem precisar do plano B |
 | P2-3 | ✅ Fechado | Nomes do Drive padronizados por script (`scripts/organizar_dataset_yolo.py`), documentados em `estrutura_drive.md` |
-| P2-1 | ✅ Fechado | O checkpoint de decisão foi antecipado para 02/10, com as Entregas 1 e 2 já executadas, e decidiu fazer o escopo opcional 2. Os treinos foram executados no Colab e o notebook ficou completo em 03/10 (F6-16 concluída), sem atrasar as Entregas 1 e 2; só falta o vídeo, acompanhado na F6-18 |
-| P2-4 | 🟡 Mitigado | Roteiros de gravação da Entrega 1 (≈4min20s) e do escopo opcional 1 (≈3min50s) definidos, cronometrados e validados. A gravação dos três vídeos (F6-05, F6-17 e F6-18) foi reagendada para 09/10. Fecha quando os vídeos publicados tiverem até 5 minutos |
+| P2-1 | ✅ Fechado | O checkpoint de decisão foi antecipado para 02/10, com as Entregas 1 e 2 já executadas, e decidiu fazer o escopo opcional 2. Os treinos foram executados no Colab e o notebook ficou completo em 03/10 (F6-16 concluída), sem atrasar as Entregas 1 e 2; o vídeo foi publicado em 11/10 (F6-18) |
+| P2-4 | ✅ Fechado | Os três vídeos foram publicados no YouTube como "não listado" e estão dentro do limite de 5 minutos: Entrega 1 com 4min50s, escopo opcional 1 com 2min56s e escopo opcional 2 com 3min33s (F6-05, F6-17 e F6-18 concluídas em 11/10) |
 | P3-2 | 🟡 Mitigado | Verificações automáticas antes do treino: a célula 2.2 da Entrega 1 e a célula 2.0 da Entrega 2 conferem contagens, rótulos e classes e interrompem a execução com erro se algo faltar |
 
 ---

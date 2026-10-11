@@ -2,6 +2,8 @@
 
 > **FIAP — Fase 6 · Escopo opcional 1** · Reconhecimento em tempo real usando o modelo `best.pt` da Entrega 1
 
+> 🎬 **Vídeo de demonstração:** [youtu.be/vaLZAQWHWXQ](https://youtu.be/vaLZAQWHWXQ) (YouTube, não listado, 2min56s)
+
 ## 🎯 Objetivo
 
 Levar o modelo treinado na Entrega 1 (YOLO customizado, 60 épocas, mAP50 = 0,916 na validação) para fora do notebook: capturar imagens de uma câmera **ao vivo** e reconhecer tomate e pimentão em cada quadro, mostrando na tela a caixa, a classe e a confiança de cada detecção.
@@ -632,32 +634,34 @@ No modo `--sem-janela`, **cada quadro** é salvo em `prints/` — para vídeos l
 - Mensagens de erro claras quando o modelo não é encontrado, quando a câmera não abre e quando ela abre sem entregar imagens.
 - Execução completa com o `best.pt` oficial, usando como fonte um vídeo montado com as 8 imagens de teste da Entrega 1 (sem janela, em CPU): 8 quadros processados, caixas, classe e confiança desenhadas e salvas, cerca de 9 FPS em CPU num Mac.
 - Escolha de câmera testada com hardware real num Mac com duas câmeras (a do próprio Mac e um iPhone pela Câmera de Continuidade): as duas foram encontradas, a lista apareceu com a resolução de cada uma, entradas inválidas foram recusadas sem travar e a câmera escolhida entregou imagem. Os demais casos (uma câmera só, números com lacuna, nenhuma câmera, câmera sem permissão, sem teclado para responder) foram testados por simulação. **No Windows, com duas câmeras reais, ainda não foi testado.**
-- **Teste ao vivo em 03/10/2026**, com frutos reais sobre o piso, num Mac usando a câmera de um iPhone pela Câmera de Continuidade (câmera 0 da lista, imagem de 1920x1080, cerca de 27 FPS) — resultados abaixo. A gravação do vídeo é o próximo passo.
+- **Teste ao vivo em 11/10/2026**, o mesmo do [vídeo de demonstração](https://youtu.be/vaLZAQWHWXQ), com frutos reais sobre uma superfície branca, num Mac (imagem de 1920x1080, de 16 a 21 FPS) — resultados abaixo.
 
-## 🎥 Teste ao vivo (03/10/2026)
+## 🎥 Teste ao vivo (11/10/2026)
 
-Prints salvos com a tecla `s` durante o teste, sem nenhuma edição. Câmera usada: a de um iPhone, oferecida ao Mac pela Câmera de Continuidade (câmera 0 da lista de escolha):
+Prints salvos com a tecla `s` durante o teste gravado no vídeo, sem nenhuma edição:
 
 | Print | O que estava na frente da câmera | Resultado na tela |
 |-------|----------------------------------|-------------------|
-| [`deteccao_20261003_103201_127463.jpg`](./prints/deteccao_20261003_103201_127463.jpg) | Tomate | ✅ `tomate 0.57` |
-| [`deteccao_20261003_103203_868972.jpg`](./prints/deteccao_20261003_103203_868972.jpg) | O mesmo tomate, segundos depois | ✅ `tomate 0.52` |
-| [`deteccao_20261003_103300_875598.jpg`](./prints/deteccao_20261003_103300_875598.jpg) | Pimentão **amarelo** | ⚠️ `nenhuma detecção` |
-| [`deteccao_20261003_103338_663639.jpg`](./prints/deteccao_20261003_103338_663639.jpg) | Pimentão verde e vermelho | ✅ `pimentao 0.54` |
+| [`deteccao_20261011_133345_338297.jpg`](./prints/deteccao_20261011_133345_338297.jpg) | Tomate | ✅ `tomate 0.52` (21,1 FPS) |
+| [`deteccao_20261011_153923_486876.jpg`](./prints/deteccao_20261011_153923_486876.jpg) | Pimentão vermelho com partes verdes | ✅ `pimentao 0.55` (16,2 FPS) |
+| [`deteccao_20261011_153931_221028.jpg`](./prints/deteccao_20261011_153931_221028.jpg) | O mesmo pimentão, segundos depois | ✅ `pimentao 0.61` (17,1 FPS) |
+| [`deteccao_20261011_154440_788591.jpg`](./prints/deteccao_20261011_154440_788591.jpg) | Pimentão **amarelo** | ❌ classificado como `tomate 0.77` (20,8 FPS) |
 
-![Tomate reconhecido ao vivo](./prints/deteccao_20261003_103201_127463.jpg)
+![Pimentão amarelo classificado como tomate ao vivo](./prints/deteccao_20261011_154440_788591.jpg)
 
 **O que o teste mostra:**
 
-- O sistema funciona de ponta a ponta com uma câmera de verdade: captura, reconhece e desenha caixa, classe e confiança em tempo real, a cerca de 27 quadros por segundo.
-- Nos três casos reconhecidos, a classe estava **certa**, mas a confiança ficou **baixa** (0,52 a 0,57), logo acima do limiar de 0,5. No teste da Entrega 1, com as fotos do próprio dataset, as confianças dos acertos ficaram entre 0,77 e 0,97. A diferença é esperada: o modelo aprendeu com 64 fotos tiradas de perto, em outro ambiente e com outra câmera; ao vivo mudam o fundo (piso de madeira), a luz, a distância e a câmera.
-- O **pimentão amarelo não foi reconhecido** — nenhuma detecção chegou a 0,5. É um caso fora do que o modelo aprendeu e reforça a principal limitação do projeto: um dataset pequeno não cobre a variedade de cores dos pimentões (o erro do teste da Entrega 1 também foi com um pimentão de cor intermediária, o laranja).
-- Para melhorar, o caminho é ampliar o dataset com mais cores de pimentão e com fotos em ambientes variados — não mexer no limiar de confiança, que só esconderia o problema.
+- O sistema funciona de ponta a ponta com uma câmera de verdade: captura, reconhece e desenha caixa, classe e confiança em tempo real, de 16 a 21 quadros por segundo.
+- No tomate e no pimentão vermelho, a classe estava **certa**, mas a confiança ficou **baixa** (0,52 a 0,61), pouco acima do limiar de 0,5. No teste da Entrega 1, com as fotos do próprio dataset, as confianças dos acertos ficaram entre 0,77 e 0,97. A diferença é esperada: o modelo aprendeu com 64 fotos tiradas de perto, em outro ambiente e com outra câmera; ao vivo mudam o fundo, a luz, a distância e a câmera.
+- O **pimentão amarelo foi classificado como "tomate"** — com confiança entre 0,60 e 0,83 ao longo do vídeo (0,77 no print acima). É o mesmo padrão do erro do teste da Entrega 1, em que um pimentão laranja (`pimentao_23`) também virou "tomate": com um dataset pequeno, o modelo tende a associar frutos lisos de cor quente a tomate, e o treino não cobre a variedade de cores dos pimentões.
+- Para melhorar, o caminho é ampliar o dataset com mais cores de pimentão (amarelo e laranja) e com fotos em ambientes variados — não mexer no limiar de confiança, que não corrigiria uma classe trocada com confiança alta.
+
+> O slide de resultados do vídeo mostra o teste de 03/10. Nos testes gravados em 11/10, o pimentão amarelo foi classificado como "tomate". Valem os resultados e prints desta seção.
 
 ## ⚠️ Limitações esperadas
 
 - **O modelo aprendeu com apenas 64 fotos de treino**, tiradas de perto, com o fruto ocupando boa parte da imagem. Com a câmera ao vivo, distância, enquadramento, fundo e iluminação diferentes podem trocar a classe. Isso já apareceu no teste com o vídeo montado: a foto `tomate_37` foi reduzida para caber no quadro (o fruto ficou menor, com faixas escuras em volta) e passou a ser detectada como "pimentão" (0,80), embora a mesma foto, no tamanho original, dê "tomate" (0,97) no teste da Entrega 1. Nesse vídeo, 6 de 8 quadros foram classificados corretamente.
-- **Pimentões alaranjados** tendem a ser confundidos com tomate — o mesmo erro do teste da Entrega 1 (`pimentao_23`).
+- **Pimentões alaranjados e amarelos** tendem a ser confundidos com tomate — o mesmo erro do teste da Entrega 1 (`pimentao_23`) e do pimentão amarelo no teste ao vivo.
 - Para resultados mais estáveis ao vivo: aproximar o fruto da câmera, usar fundo liso e boa iluminação, e manter o limiar de confiança em 0,5 ou mais.
 - O FPS depende do computador: em CPU, a inferência a cada quadro limita a fluidez; com GPU (`--device 0` ou `--device mps`) fica mais fluido.
 
@@ -668,5 +672,5 @@ ir_alem/ir_alem_1_deteccao_tempo_real/
 ├── README.md                  ← este arquivo
 ├── deteccao_tempo_real.py     ← captura + inferência + prints
 ├── modelo/best.pt             ← (não versionado) copiar do Google Drive
-└── prints/                    ← prints salvos com a tecla "s" (os do teste ao vivo de 03/10 estão versionados)
+└── prints/                    ← prints salvos com a tecla "s" (os do teste ao vivo de 11/10 estão versionados)
 ```
